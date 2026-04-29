@@ -115,8 +115,8 @@ class PosterGL {
   constructor(canvas, imgUrl){
     this.canvas = canvas;
     this.imgUrl = imgUrl;
-    this.gl = canvas.getContext("webgl", {premultipliedAlpha:false, antialias:true});
-    if(!this.gl) return;
+    this.gl = canvas.getContext("webgl", {premultipliedAlpha:false, antialias:true}) || canvas.getContext("experimental-webgl");
+    if(!this.gl){ console.warn("WebGL unavailable, using <img> fallback"); this._fallback(); return; }
     this.mouse = {x:-1, y:-1};
     this.hover = 0; this.targetHover = 0;
     this.active = 0; this.targetActive = 0;
@@ -132,17 +132,26 @@ class PosterGL {
     gl.shaderSource(sh, src);
     gl.compileShader(sh);
     if(!gl.getShaderParameter(sh, gl.COMPILE_STATUS)){
-      console.error(gl.getShaderInfoLog(sh)); return null;
+      console.error("shader compile failed:", gl.getShaderInfoLog(sh));
+      this._fallback();
+      return null;
     }
     return sh;
   }
   _init(){
     const gl = this.gl;
+    const vs = this._shader(gl.VERTEX_SHADER, VS);
+    const fs = this._shader(gl.FRAGMENT_SHADER, FS);
+    if(!vs || !fs) return;
     const prog = gl.createProgram();
-    gl.attachShader(prog, this._shader(gl.VERTEX_SHADER, VS));
-    gl.attachShader(prog, this._shader(gl.FRAGMENT_SHADER, FS));
+    gl.attachShader(prog, vs);
+    gl.attachShader(prog, fs);
     gl.linkProgram(prog);
-    if(!gl.getProgramParameter(prog, gl.LINK_STATUS)){ console.error(gl.getProgramInfoLog(prog)); return; }
+    if(!gl.getProgramParameter(prog, gl.LINK_STATUS)){
+      console.error("program link failed:", gl.getProgramInfoLog(prog));
+      this._fallback();
+      return;
+    }
     gl.useProgram(prog);
     this.prog = prog;
 
@@ -176,19 +185,35 @@ class PosterGL {
     this.tex = tex;
 
     const img = new Image();
-    img.crossOrigin = "anonymous";
+    // Same-origin image — no crossOrigin needed (and setting it can break Chrome cache reuse)
     img.onload = () => {
-      gl.bindTexture(gl.TEXTURE_2D, this.tex);
-      gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL, false);
-      gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, img);
-      this.imgSize = {w:img.naturalWidth, h:img.naturalHeight};
-      this.ready = true;
+      try {
+        gl.bindTexture(gl.TEXTURE_2D, this.tex);
+        gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL, false);
+        gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, img);
+        this.imgSize = {w:img.naturalWidth, h:img.naturalHeight};
+        this.ready = true;
+      } catch(e){
+        console.error("texImage2D failed for", this.imgUrl, e);
+        this._fallback();
+      }
     };
+    img.onerror = () => { console.error("image load failed:", this.imgUrl); this._fallback(); };
     img.src = this.imgUrl;
+    this._imgEl = img;
+  }
+  _fallback(){
+    // WebGL pipeline broken or image failed — show a plain <img> instead
+    const img = this.canvas.parentNode.querySelector('img');
+    if(img) img.classList.remove('hidden');
+    this.canvas.style.display = 'none';
+    this.dead = true;
   }
   resize(){
     const dpr = Math.min(window.devicePixelRatio || 1, 2);
-    const w = this.canvas.clientWidth, h = this.canvas.clientHeight;
+    const rect = this.canvas.getBoundingClientRect();
+    const w = Math.max(1, Math.floor(rect.width));
+    const h = Math.max(1, Math.floor(rect.height));
     if(this.canvas.width !== w*dpr || this.canvas.height !== h*dpr){
       this.canvas.width = w*dpr; this.canvas.height = h*dpr;
       this.gl.viewport(0, 0, this.canvas.width, this.canvas.height);
@@ -198,7 +223,7 @@ class PosterGL {
   setHover(on){ this.targetHover = on ? 1 : 0; }
   setActive(on){ this.targetActive = on ? 1 : 0; }
   render(){
-    if(!this.gl || !this.prog) return;
+    if(!this.gl || !this.prog || this.dead) return;
     this.resize();
     const gl = this.gl;
     // ease toward targets
