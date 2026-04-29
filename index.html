@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Reel — Saber Zou</title>
+<meta name="description" content="Films, reimagined as posters. A cinema journal by Saber Zou.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F5EBE0;
+    --paper-2:#EBE0D2;
+    --ink:#252422;
+    --ink-soft:#8C8080;
+    --accent:#C0392B;
+    --rule:rgba(37,36,34,.08);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{background:var(--paper);color:var(--ink);font-family:"Inter",sans-serif;-webkit-font-smoothing:antialiased;height:100%;width:100%;overflow:hidden;-webkit-user-select:none;user-select:none}
+  a{color:inherit;text-decoration:none}
+
+  /* === Justine-style noise/grain layer === */
+  .noise{position:fixed;inset:0;z-index:1;pointer-events:none;background-image:url("noise.png");background-repeat:repeat;opacity:.55;mix-blend-mode:multiply;animation:noise-shift 1.2s steps(2) infinite}
+  @keyframes noise-shift{0%{background-position:0 0}50%{background-position:-12px 7px}100%{background-position:8px -10px}}
+
+  /* === Top bar === */
+  .topbar{position:fixed;top:0;left:0;right:0;z-index:30;display:flex;justify-content:space-between;align-items:center;padding:28px 36px;pointer-events:none;mix-blend-mode:multiply}
+  .topbar > *{pointer-events:auto}
+  .brand{font-family:"Inter",sans-serif;font-weight:700;font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink)}
+  .brand .accent{color:var(--accent)}
+  .nav{display:flex;gap:24px;align-items:center;font-family:"Inter",sans-serif;font-weight:500;font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink)}
+  .nav a{transition:color .25s;cursor:pointer}
+  .nav a:hover{color:var(--accent)}
+  .nav .vol{color:var(--ink-soft);font-weight:400}
+
+  /* === Stage === */
+  .stage{position:fixed;inset:0;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;display:flex;align-items:center;z-index:2}
+  .stage::-webkit-scrollbar{display:none}
+  .strip{display:flex;align-items:center;height:100%;padding:0 50vw;gap:0;cursor:grab}
+  .strip.dragging{cursor:grabbing}
+
+  /* === Frames: true 2:3 ratio, no cropping === */
+  .frame{position:relative;flex:0 0 auto;height:70vh;aspect-ratio:2/3;scroll-snap-align:center;margin:0 9vw;display:flex;align-items:center;justify-content:center;transition:opacity .6s ease, transform .8s cubic-bezier(.2,.8,.2,1)}
+  .frame:not(.active){opacity:.32;transform:scale(.94)}
+  .frame.active{opacity:1;transform:scale(1)}
+  .frame .poster{position:relative;width:100%;height:100%;background:var(--paper-2);overflow:hidden;cursor:pointer;box-shadow:0 30px 80px -30px rgba(37,36,34,.28), 0 6px 20px -10px rgba(37,36,34,.14)}
+  .frame .poster img{width:100%;height:100%;object-fit:contain;display:block;background:var(--paper-2)}
+  .frame .poster canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
+  .frame .poster img.hidden{visibility:hidden}
+
+  /* === End card === */
+  .endcard{flex:0 0 auto;height:70vh;width:46vh;scroll-snap-align:center;margin:0 9vw;display:flex;flex-direction:column;justify-content:center;gap:20px;padding:0 12px;transition:opacity .6s}
+  .endcard:not(.active){opacity:.4}
+  .endcard h2{font-family:"Cormorant Garamond",serif;font-weight:400;font-size:48px;line-height:1.02;letter-spacing:-.015em}
+  .endcard h2 em{font-style:italic;color:var(--accent)}
+  .endcard p{font-family:"Cormorant Garamond",serif;font-size:18px;line-height:1.55;color:var(--ink-soft)}
+  .endcard .sig{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:15px;color:var(--ink);margin-top:8px}
+
+  /* === Lower nameplate === */
+  .nameplate{position:fixed;left:50%;transform:translateX(-50%);bottom:7%;z-index:15;text-align:center;pointer-events:none;width:min(90vw,720px)}
+  .nameplate .num{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.18em;color:var(--accent);text-transform:uppercase;margin-bottom:14px;opacity:0;transition:opacity .4s}
+  .nameplate .name{font-family:"Cormorant Garamond",serif;font-weight:500;font-style:italic;font-size:clamp(34px,4.4vw,54px);line-height:1;letter-spacing:-.02em;text-transform:lowercase;color:var(--ink);position:relative;display:inline-block;opacity:0;transform:translateY(8px);transition:opacity .5s, transform .5s}
+  .nameplate .wave{position:absolute;left:0;right:0;bottom:-14px;height:8px;width:100%;opacity:0;transition:opacity .5s}
+  .nameplate .wave svg{display:block;width:100%;height:100%;overflow:visible}
+  .nameplate .wave path{stroke:var(--accent);stroke-width:1.5;fill:none;stroke-dasharray:300;stroke-dashoffset:600;animation:loopThunder 1.5s cubic-bezier(.455,.03,.515,.955) infinite}
+  @keyframes loopThunder{0%{stroke-dashoffset:600}100%{stroke-dashoffset:0}}
+  .nameplate .type{font-family:"Inter",sans-serif;font-weight:500;font-size:13px;letter-spacing:.05em;text-transform:uppercase;color:var(--ink-soft);margin-top:28px;opacity:0;transition:opacity .5s}
+  .nameplate.show .num,.nameplate.show .name,.nameplate.show .wave,.nameplate.show .type{opacity:1;transform:translateY(0)}
+
+  .counter{position:fixed;left:36px;bottom:32px;z-index:15;font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.14em;color:var(--ink-soft);text-transform:uppercase;mix-blend-mode:multiply}
+  .counter strong{color:var(--ink);font-weight:400}
+  .hint{position:fixed;right:36px;bottom:32px;z-index:15;font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.14em;color:var(--ink-soft);text-transform:uppercase;display:flex;align-items:center;gap:10px;opacity:.85;mix-blend-mode:multiply}
+  .hint .arrow{display:inline-block;animation:nudge 1.6s ease-in-out infinite}
+  @keyframes nudge{0%,100%{transform:translateX(0)}50%{transform:translateX(5px)}}
+
+  .vignette{position:fixed;inset:0;pointer-events:none;z-index:6;background:radial-gradient(ellipse at center, transparent 55%, rgba(37,36,34,.10) 100%);mix-blend-mode:multiply}
+
+  /* === Detail / lightbox === */
+  .detail{position:fixed;inset:0;background:rgba(245,235,224,.985);backdrop-filter:blur(14px);z-index:50;display:none;align-items:center;justify-content:center;padding:48px}
+  .detail.open{display:flex}
+  .detail-inner{display:grid;grid-template-columns:auto 380px;gap:64px;max-width:1180px;width:100%;align-items:center}
+  @media (max-width:860px){.detail-inner{grid-template-columns:1fr;gap:24px;overflow:auto;max-height:100%}}
+  .detail .poster-wrap{display:flex;align-items:center;justify-content:center}
+  .detail img{max-height:82vh;width:auto;max-width:100%;display:block;box-shadow:0 30px 60px -20px rgba(37,36,34,.18)}
+  .detail .info{display:flex;flex-direction:column;gap:18px}
+  .detail .info .kicker{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent)}
+  .detail .info h3{font-family:"Cormorant Garamond",serif;font-weight:400;font-size:44px;line-height:1.05;letter-spacing:-.015em}
+  .detail .info .byline{font-family:"Cormorant Garamond",serif;font-style:italic;color:var(--ink-soft);font-size:16px}
+  .detail .info .quote{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:18px;line-height:1.5;color:var(--ink);padding:18px 0;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+  .detail .info .note{font-size:14px;line-height:1.7;color:var(--ink-soft)}
+  .detail .info dl{display:grid;grid-template-columns:96px 1fr;gap:8px 16px;font-size:12px;padding-top:14px;border-top:1px solid var(--rule)}
+  .detail .info dt{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft);padding-top:2px}
+  .detail .close{position:absolute;top:24px;right:32px;font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);cursor:pointer;background:none;border:none;padding:8px 12px}
+  .detail .close:hover{color:var(--accent)}
+
+  @media (max-width:720px){
+    .frame{height:58vh;margin:0 14vw}
+    .strip{padding:0 30vw}
+    .nameplate{bottom:8%}
+    .topbar{padding:18px 20px}
+    .nav .vol{display:none}
+    .counter,.hint{bottom:18px}
+    .counter{left:20px}.hint{right:20px}
+  }
+</style>
+</head>
+<body>
+
+<div class="noise"></div>
+
+<header class="topbar">
+  <div class="brand">Saber Zou <span class="accent">·</span> Reel</div>
+  <nav class="nav">
+    <span class="vol">Vol. 01 / Spring MMXXVI</span>
+    <a id="aboutBtn">About</a>
+  </nav>
+</header>
+
+<div class="stage" id="stage">
+  <div class="strip" id="strip"></div>
+</div>
+
+<div class="vignette"></div>
+
+<div class="nameplate" id="nameplate">
+  <div class="num" id="npNum"></div>
+  <div class="name">
+    <span id="npNameText"></span>
+    <span class="wave" aria-hidden="true">
+      <svg viewBox="0 0 200 8" preserveAspectRatio="none"><path d="M0,4 Q25,0 50,4 T100,4 T150,4 T200,4"/></svg>
+    </span>
+  </div>
+  <div class="type" id="npType"></div>
+</div>
+
+<div class="counter"><strong id="cntCur">01</strong> &nbsp;/&nbsp; <span id="cntTot">02</span></div>
+<div class="hint">Scroll · drag · ← → <span class="arrow">→</span></div>
+
+<div class="detail" id="detail" role="dialog" aria-modal="true">
+  <button class="close" id="closeDetail">Close ×</button>
+  <div class="detail-inner">
+    <div class="poster-wrap"><img id="dImg" src="" alt=""></div>
+    <div class="info">
+      <div class="kicker" id="dKicker"></div>
+      <h3 id="dTitle"></h3>
+      <div class="byline" id="dByline"></div>
+      <div class="quote" id="dQuote"></div>
+      <div class="note" id="dNote"></div>
+      <dl id="dMeta"></dl>
+    </div>
+  </div>
+</div>
+
+<script src="reel.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Reel — A Cinema Journal by Saber Zou</title>
+<meta name="description" content="Films I've watched, reimagined as posters.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F4F0E8;
+    --paper-2:#EBE5D8;
+    --ink:#1A1A1A;
+    --ink-soft:#5A554C;
+    --accent:#C0392B;
+    --rule:rgba(26,26,26,.12);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{background:var(--paper);color:var(--ink);font-family:"Inter",sans-serif;font-weight:300;line-height:1.5;-webkit-font-smoothing:antialiased}
+  body{
+    background-image:
+      radial-gradient(rgba(26,26,26,.018) 1px, transparent 1px),
+      radial-gradient(rgba(26,26,26,.012) 1px, transparent 1px);
+    background-size: 3px 3px, 7px 7px;
+    background-position: 0 0, 1px 2px;
+  }
+  a{color:inherit;text-decoration:none}
+  .mono{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft)}
+  .serif{font-family:"Cormorant Garamond",serif}
+
+  /* layout shell */
+  .wrap{max-width:1280px;margin:0 auto;padding:48px 56px 96px}
+  @media (max-width:720px){.wrap{padding:32px 24px 64px}}
+
+  /* masthead */
+  .masthead{display:flex;justify-content:space-between;align-items:flex-start;padding-bottom:32px;border-bottom:1px solid var(--rule);margin-bottom:64px}
+  .brand{display:flex;flex-direction:column;gap:6px}
+  .brand .mark{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:34px;line-height:1;letter-spacing:-.01em}
+  .brand .mark .dot{color:var(--accent)}
+  .brand .tagline{font-size:12px;color:var(--ink-soft);letter-spacing:.02em}
+  .meta{text-align:right;display:flex;flex-direction:column;gap:6px;align-items:flex-end}
+  .meta .nav{display:flex;gap:18px}
+  .meta .nav a{font-size:12px;letter-spacing:.04em;color:var(--ink-soft);transition:color .2s}
+  .meta .nav a:hover{color:var(--accent)}
+
+  /* hero */
+  .hero{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:end;margin-bottom:96px}
+  @media (max-width:860px){.hero{grid-template-columns:1fr;gap:32px}}
+  .hero-title{font-family:"Cormorant Garamond",serif;font-weight:400;font-size:clamp(48px,7vw,96px);line-height:1.02;letter-spacing:-.02em}
+  .hero-title em{font-style:italic;color:var(--accent)}
+  .hero-lede{max-width:420px;font-size:15px;color:var(--ink-soft);line-height:1.7}
+  .hero-lede p+p{margin-top:14px}
+
+  /* section header */
+  .section-head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:40px;padding-bottom:14px;border-bottom:1px solid var(--rule)}
+  .section-head h2{font-family:"Cormorant Garamond",serif;font-weight:400;font-size:22px;letter-spacing:.01em}
+  .section-head .count{font-family:"JetBrains Mono",monospace;font-size:11px;color:var(--ink-soft);letter-spacing:.08em}
+
+  /* poster grid */
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:64px 48px}
+  @media (max-width:980px){.grid{grid-template-columns:repeat(2,1fr);gap:48px 32px}}
+  @media (max-width:560px){.grid{grid-template-columns:1fr;gap:48px}}
+
+  .card{display:flex;flex-direction:column;gap:14px;cursor:pointer;transition:transform .4s ease}
+  .card:hover{transform:translateY(-4px)}
+  .card .frame{aspect-ratio:2/3;background:var(--paper-2);overflow:hidden;position:relative}
+  .card .frame img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .8s ease, filter .4s ease;filter:saturate(.96)}
+  .card:hover .frame img{transform:scale(1.02);filter:saturate(1)}
+  .card .info{display:flex;justify-content:space-between;align-items:baseline;padding-top:6px;border-top:1px solid var(--rule)}
+  .card .title{font-family:"Cormorant Garamond",serif;font-size:20px;letter-spacing:-.005em;line-height:1.2}
+  .card .year{font-family:"JetBrains Mono",monospace;font-size:11px;color:var(--ink-soft);letter-spacing:.06em}
+  .card .director{font-size:12px;color:var(--ink-soft);font-style:italic;font-family:"Cormorant Garamond",serif}
+
+  /* placeholder card (coming soon) */
+  .placeholder{opacity:.5;cursor:default}
+  .placeholder:hover{transform:none}
+  .placeholder .frame{display:flex;align-items:center;justify-content:center;border:1px dashed var(--rule)}
+  .placeholder .frame::after{content:"forthcoming";font-family:"JetBrains Mono",monospace;font-size:11px;color:var(--ink-soft);letter-spacing:.1em;text-transform:uppercase}
+  .placeholder .frame img{display:none}
+
+  /* footer */
+  footer{margin-top:120px;padding-top:32px;border-top:1px solid var(--rule);display:flex;justify-content:space-between;align-items:flex-start;gap:32px;flex-wrap:wrap}
+  footer .colophon{max-width:480px;font-size:12px;color:var(--ink-soft);line-height:1.7}
+  footer .colophon strong{color:var(--ink);font-weight:400;font-family:"Cormorant Garamond",serif;font-size:14px}
+  footer .stamp{font-family:"JetBrains Mono",monospace;font-size:10px;color:var(--ink-soft);letter-spacing:.1em;text-transform:uppercase;text-align:right}
+
+  /* lightbox */
+  .lightbox{position:fixed;inset:0;background:rgba(244,240,232,.97);display:none;align-items:center;justify-content:center;z-index:100;padding:48px;backdrop-filter:blur(8px)}
+  .lightbox.open{display:flex}
+  .lightbox-inner{display:grid;grid-template-columns:auto 360px;gap:48px;max-width:1100px;width:100%;max-height:100%;align-items:center}
+  @media (max-width:860px){.lightbox-inner{grid-template-columns:1fr;gap:24px;overflow:auto}}
+  .lightbox img{max-height:80vh;width:auto;max-width:100%;display:block;box-shadow:0 30px 60px -20px rgba(26,26,26,.18)}
+  .lightbox .details{display:flex;flex-direction:column;gap:18px}
+  .lightbox .details .kicker{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent)}
+  .lightbox .details h3{font-family:"Cormorant Garamond",serif;font-weight:400;font-size:38px;line-height:1.05;letter-spacing:-.01em}
+  .lightbox .details .byline{font-family:"Cormorant Garamond",serif;font-style:italic;color:var(--ink-soft);font-size:16px}
+  .lightbox .details .note{font-size:14px;line-height:1.7;color:var(--ink-soft);padding-top:14px;border-top:1px solid var(--rule)}
+  .lightbox .details .quote{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:18px;line-height:1.5;color:var(--ink);padding:18px 0;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+  .lightbox .details dl{display:grid;grid-template-columns:90px 1fr;gap:8px 16px;font-size:12px}
+  .lightbox .details dt{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft);padding-top:2px}
+  .lightbox .details dd{color:var(--ink)}
+  .lightbox .close{position:absolute;top:24px;right:32px;font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);cursor:pointer;background:none;border:none;padding:8px 12px}
+  .lightbox .close:hover{color:var(--accent)}
+
+  /* keyboard focus */
+  .card:focus-visible{outline:2px solid var(--accent);outline-offset:6px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="masthead">
+    <div class="brand">
+      <div class="mark">Reel<span class="dot">.</span></div>
+      <div class="tagline">A cinema journal · est. 2026</div>
+    </div>
+    <div class="meta">
+      <div class="mono">Vol. 01 · Spring</div>
+      <nav class="nav">
+        <a href="#archive">Archive</a>
+        <a href="#about">About</a>
+        <a href="#colophon">Colophon</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <h1 class="hero-title">Films, reimagined<br>as <em>posters</em>.</h1>
+    <div class="hero-lede">
+      <p>This is a slow, personal record of the films I love — translated into the visual language I'd want to hang on my wall.</p>
+      <p>One film. One poster. One quiet idea per piece. No spoilers, no star ratings, no algorithms. Just attention.</p>
+    </div>
+  </section>
+
+  <section id="archive">
+    <div class="section-head">
+      <h2>The Archive</h2>
+      <div class="count">02 / FORTHCOMING</div>
+    </div>
+
+    <div class="grid">
+
+      <article class="card" tabindex="0" data-key="hail-mary">
+        <div class="frame"><img src="posters/hail-mary.jpg" alt="Project Hail Mary poster"></div>
+        <div class="info">
+          <div>
+            <div class="title">Project Hail Mary</div>
+            <div class="director">dir. Phil Lord & Christopher Miller</div>
+          </div>
+          <div class="year">2026</div>
+        </div>
+      </article>
+
+      <article class="card" tabindex="0" data-key="mario-galaxy">
+        <div class="frame"><img src="posters/mario-galaxy.jpg" alt="Mario Galaxy poster"></div>
+        <div class="info">
+          <div>
+            <div class="title">Mario Galaxy</div>
+            <div class="director">dir. Aaron Horvath & Michael Jelenic</div>
+          </div>
+          <div class="year">2026</div>
+        </div>
+      </article>
+
+      <article class="card placeholder"><div class="frame"><img alt=""></div>
+        <div class="info"><div><div class="title">— next entry —</div><div class="director">soon</div></div><div class="year">2026</div></div>
+      </article>
+
+    </div>
+  </section>
+
+  <section id="about" style="margin-top:120px">
+    <div class="section-head">
+      <h2>About</h2>
+      <div class="count">A NOTE</div>
+    </div>
+    <div style="max-width:640px;font-size:16px;line-height:1.8;color:var(--ink-soft);font-family:'Cormorant Garamond',serif">
+      <p style="margin-bottom:18px">I'm Saber. I make things — products at Microsoft by day, doodles and photographs by night. This journal is where the films I see meet the visual rules I love: warm paper, ink, restraint, a single confident idea.</p>
+      <p>Every poster begins with a feeling I want to keep. Then I distill it down — fewer elements, more attention. The result isn't an advertisement. It's a souvenir.</p>
+    </div>
+  </section>
+
+  <footer id="colophon">
+    <div class="colophon">
+      <strong>Colophon</strong><br>
+      Set in <em>Cormorant Garamond</em> &amp; <em>Inter</em>, with <em>JetBrains Mono</em> for marginalia. Designed and illustrated by Saber Zou. The visual register draws from Polish poster school, Criterion Collection, and the quiet confidence of a museum catalog. Posters are made with care, one film at a time.
+    </div>
+    <div class="stamp">
+      Reel · No. 01<br>
+      MMXXVI · Shanghai<br>
+      <span style="color:var(--accent)">●</span> Currently watching
+    </div>
+  </footer>
+
+</div>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true">
+  <button class="close" id="closeBox">Close ×</button>
+  <div class="lightbox-inner">
+    <img id="lbImg" src="" alt="">
+    <div class="details">
+      <div class="kicker" id="lbKicker">Entry No.</div>
+      <h3 id="lbTitle"></h3>
+      <div class="byline" id="lbByline"></div>
+      <div class="quote" id="lbQuote"></div>
+      <div class="note" id="lbNote"></div>
+      <dl id="lbMeta"></dl>
+    </div>
+  </div>
+</div>
+
+<script>
+  const films = {
+    "hail-mary": {
+      no: "01",
+      title: "Project Hail Mary",
+      byline: "Andy Weir · adapted by Drew Goddard",
+      img: "posters/hail-mary.jpg",
+      quote: "\"Question?\" — \"Answer.\"",
+      note: "A solo astronaut wakes up alone, light-years from home, with a job to save the sun. What he finds instead is a friend. The poster maps the trajectory between two stars — Sol and Tau Ceti — and the small unlikely meeting at the end of the line.",
+      meta: { Director: "Phil Lord & Christopher Miller", Year: "2026", Watched: "April 2026", Tags: "Hard sci-fi · Friendship · Solitude" }
+    },
+    "mario-galaxy": {
+      no: "02",
+      title: "Mario Galaxy",
+      byline: "A film by Illumination · Nintendo",
+      img: "posters/mario-galaxy.jpg",
+      quote: "\"The cosmos remembers.\"",
+      note: "Mario in space. Rosalina. Lumas. The Comet Observatory. The poster maps the cast as a small constellation — every character a planet, every planet a world to visit. Quiet, joyful, infinite.",
+      meta: { Director: "Aaron Horvath & Michael Jelenic", Year: "2026", Watched: "April 2026", Tags: "Animation · Adventure · Family" }
+    }
+  };
+
+  const lb = document.getElementById('lightbox');
+  const lbImg = document.getElementById('lbImg');
+  const lbTitle = document.getElementById('lbTitle');
+  const lbByline = document.getElementById('lbByline');
+  const lbQuote = document.getElementById('lbQuote');
+  const lbNote = document.getElementById('lbNote');
+  const lbKicker = document.getElementById('lbKicker');
+  const lbMeta = document.getElementById('lbMeta');
+
+  function openFilm(key){
+    const f = films[key]; if(!f) return;
+    lbImg.src = f.img; lbImg.alt = f.title + " poster";
+    lbTitle.textContent = f.title;
+    lbByline.textContent = f.byline;
+    lbQuote.textContent = f.quote;
+    lbNote.textContent = f.note;
+    lbKicker.textContent = "Entry No. " + f.no;
+    lbMeta.innerHTML = Object.entries(f.meta).map(([k,v]) => `<dt>${k}</dt><dd>${v}</dd>`).join('');
+    lb.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeFilm(){ lb.classList.remove('open'); document.body.style.overflow=''; }
+
+  document.querySelectorAll('.card[data-key]').forEach(c => {
+    c.addEventListener('click', () => openFilm(c.dataset.key));
+    c.addEventListener('keydown', e => { if(e.key==='Enter'||e.key===' '){ e.preventDefault(); openFilm(c.dataset.key); }});
+  });
+  document.getElementById('closeBox').addEventListener('click', closeFilm);
+  lb.addEventListener('click', e => { if(e.target === lb) closeFilm(); });
+  document.addEventListener('keydown', e => { if(e.key==='Escape') closeFilm(); });
+</script>
+</body>
+</html>
