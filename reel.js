@@ -306,7 +306,6 @@ loop();
 const stage = document.getElementById("stage");
 const nameplate = document.getElementById("nameplate");
 const npNum = document.getElementById("npNum");
-const npNameText = document.getElementById("npNameText");
 const npType = document.getElementById("npType");
 const cntCur = document.getElementById("cntCur");
 let currentIdx = -1;
@@ -330,7 +329,6 @@ function updateActive(){
     nameplate.classList.remove("show");
     setTimeout(() => {
       npNum.textContent = "Entry No. " + f.no;
-      npNameText.textContent = f.title;
       npType.textContent = f.type + "  ·  " + f.byline;
       nameplate.classList.add("show");
     }, 100);
