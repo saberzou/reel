@@ -19,6 +19,16 @@ const films = [
     quote:"\"The cosmos remembers.\"",
     note:"Mario in space. Rosalina. Lumas. The Comet Observatory. The poster maps the cast as a small constellation.",
     meta:{Director:"Aaron Horvath & Michael Jelenic", Year:"2026", Watched:"April 2026", Tags:"Adventure · Family"}
+  },
+  {
+    key:"they-will-kill-you", no:"03",
+    title:"they will kill you",
+    type:"Action-horror-comedy · 2026",
+    byline:"Kirill Sokolov · co-written with Alex Litvak",
+    img:"posters/they-will-kill-you.jpg",
+    quote:"\"The rent is murder.\"",
+    note:"A woman takes a housekeeping job in a Manhattan high-rise that has eaten its tenants for decades. Bloody, stylish, knowingly absurd — Tarantino meets The Raid in a satanic apartment building.",
+    meta:{Director:"Kirill Sokolov", Year:"2026", Watched:"April 2026", Tags:"Horror · Comedy · Cult"}
   }
 ];
 
