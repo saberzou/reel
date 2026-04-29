@@ -29,6 +29,16 @@ const films = [
     quote:"\"The rent is murder.\"",
     note:"A woman takes a housekeeping job in a Manhattan high-rise that has eaten its tenants for decades. Bloody, stylish, knowingly absurd — Tarantino meets The Raid in a satanic apartment building.",
     meta:{Director:"Kirill Sokolov", Year:"2026", Watched:"April 2026", Tags:"Horror · Comedy · Cult"}
+  },
+  {
+    key:"interstellar", no:"04",
+    title:"interstellar",
+    type:"Sci-fi epic · 2014",
+    byline:"A film by Christopher Nolan",
+    img:"posters/interstellar.jpg",
+    quote:"\"Mankind was born on Earth. It was never meant to die here.\"",
+    note:"A father leaves Earth to find humanity a new home, traveling through a wormhole and falling toward the supermassive black hole Gargantua. Love, it turns out, is the one signal that crosses every dimension.",
+    meta:{Director:"Christopher Nolan", Year:"2014", Watched:"April 2026", Tags:"Space · Time · Love"}
   }
 ];
 
