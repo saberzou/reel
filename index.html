@@ -92,13 +92,15 @@
   .detail .close:hover{color:var(--accent)}
 
   @media (max-width:720px){
-    .frame{height:58vh;margin:0 14vw}
+    .stage{align-items:flex-start}
+    .frame{height:50vh;margin:0 14vw;margin-top:11vh}
     .strip{padding:0 30vw}
-    .nameplate{bottom:8%}
+    .nameplate{bottom:5%;width:92vw}
+    .nameplate .num{margin-bottom:8px;font-size:10px}
+    .nameplate .type{font-size:11px;line-height:1.45}
     .topbar{padding:18px 20px}
     .nav .vol{display:none}
-    .counter,.hint{bottom:18px}
-    .counter{left:20px}.hint{right:20px}
+    .counter{bottom:18px;left:20px}
   }
 </style>
 </head>
@@ -107,7 +109,7 @@
 <div class="noise"></div>
 
 <header class="topbar">
-  <div class="brand">Saber Zou <span class="accent">·</span> Movy Reel</div>
+  <div class="brand">Movy Reel</div>
   <nav class="nav">
     <span class="vol">Vol. 01 / Spring MMXXVI</span>
     <a id="aboutBtn">About</a>
@@ -126,7 +128,7 @@
 </div>
 
 <div class="counter"><strong id="cntCur">01</strong> &nbsp;/&nbsp; <span id="cntTot">02</span></div>
-<div class="hint">Scroll · drag · ← → <span class="arrow">→</span></div>
+
 
 <div class="detail" id="detail" role="dialog" aria-modal="true">
   <button class="close" id="closeDetail">Close ×</button>
