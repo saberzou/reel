@@ -90,14 +90,11 @@ void main(){
   }
 
   vec2 sampleUV = uv + disp;
-  // Out-of-bounds = paper color
-  vec3 paper = vec3(0.92, 0.879, 0.831);
-  vec4 col;
+  // Out-of-bounds = fully transparent so background shows through
   if(sampleUV.x < 0.0 || sampleUV.x > 1.0 || sampleUV.y < 0.0 || sampleUV.y > 1.0){
-    col = vec4(paper, 1.0);
-  } else {
-    col = texture2D(u_tex, sampleUV);
+    discard;
   }
+  vec4 col = texture2D(u_tex, sampleUV);
 
   // Soft grain on top
   float grain = (hash(gl_FragCoord.xy + u_time*60.0) - 0.5) * 0.045;
@@ -115,7 +112,7 @@ class PosterGL {
   constructor(canvas, imgUrl){
     this.canvas = canvas;
     this.imgUrl = imgUrl;
-    this.gl = canvas.getContext("webgl", {premultipliedAlpha:false, antialias:true}) || canvas.getContext("experimental-webgl");
+    this.gl = canvas.getContext("webgl", {premultipliedAlpha:false, antialias:true, alpha:true}) || canvas.getContext("experimental-webgl");
     if(!this.gl){ console.warn("WebGL unavailable, using <img> fallback"); this._fallback(); return; }
     this.mouse = {x:-1, y:-1};
     this.hover = 0; this.targetHover = 0;
@@ -241,7 +238,7 @@ class PosterGL {
     gl.uniform1f(this.u.active, this.active);
     gl.uniform2f(this.u.imgSize, this.imgSize.w, this.imgSize.h);
     gl.uniform2f(this.u.canvasSize, this.canvas.width, this.canvas.height);
-    gl.clearColor(0.92, 0.879, 0.831, 1);
+    gl.clearColor(0, 0, 0, 0);
     gl.clear(gl.COLOR_BUFFER_BIT);
     gl.drawArrays(gl.TRIANGLES, 0, 6);
   }

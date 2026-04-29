@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Reel — Saber Zou</title>
-<meta name="description" content="Films, reimagined as posters. A cinema journal by Saber Zou.">
+<title>Movy Reel — Saber Zou</title>
+<meta name="description" content="Movy Reel — films, reimagined as posters. A cinema journal by Saber Zou.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
@@ -45,10 +45,11 @@
   .frame{position:relative;flex:0 0 auto;height:70vh;aspect-ratio:2/3;scroll-snap-align:center;margin:0 9vw;display:flex;align-items:center;justify-content:center;transition:opacity .6s ease, transform .8s cubic-bezier(.2,.8,.2,1)}
   .frame:not(.active){opacity:.32;transform:scale(.94)}
   .frame.active{opacity:1;transform:scale(1)}
-  .frame .poster{position:relative;width:100%;height:100%;background:var(--paper-2);overflow:hidden;cursor:pointer;box-shadow:0 30px 80px -30px rgba(37,36,34,.28), 0 6px 20px -10px rgba(37,36,34,.14)}
-  .frame .poster img{width:100%;height:100%;object-fit:contain;display:block;background:var(--paper-2)}
-  .frame .poster canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
+  .frame .poster{position:relative;width:100%;height:100%;background:transparent;overflow:visible;cursor:pointer}
+  .frame .poster img{width:100%;height:100%;object-fit:contain;display:block;background:transparent}
+  .frame .poster canvas{position:absolute;inset:0;width:100%;height:100%;display:block;background:transparent}
   .frame .poster img.hidden{visibility:hidden}
+  .frame .poster img{filter:drop-shadow(0 30px 60px rgba(37,36,34,.22)) drop-shadow(0 6px 14px rgba(37,36,34,.10))}
 
   /* === End card === */
   .endcard{flex:0 0 auto;height:70vh;width:46vh;scroll-snap-align:center;margin:0 9vw;display:flex;flex-direction:column;justify-content:center;gap:20px;padding:0 12px;transition:opacity .6s}
@@ -106,7 +107,7 @@
 <div class="noise"></div>
 
 <header class="topbar">
-  <div class="brand">Saber Zou <span class="accent">·</span> Reel</div>
+  <div class="brand">Saber Zou <span class="accent">·</span> Movy Reel</div>
   <nav class="nav">
     <span class="vol">Vol. 01 / Spring MMXXVI</span>
     <a id="aboutBtn">About</a>
