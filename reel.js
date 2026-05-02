@@ -39,6 +39,16 @@ const films = [
     quote:"\"Mankind was born on Earth. It was never meant to die here.\"",
     note:"A father leaves Earth to find humanity a new home, traveling through a wormhole and falling toward the supermassive black hole Gargantua. Love, it turns out, is the one signal that crosses every dimension.",
     meta:{Director:"Christopher Nolan", Year:"2014", Watched:"April 2026", Tags:"Space · Time · Love"}
+  },
+  {
+    key:"devil-wears-prada-2", no:"05",
+    title:"the devil wears prada 2",
+    type:"Drama · 2026",
+    byline:"A film by David Frankel · written by Aline Brosh McKenna",
+    img:"posters/devil-wears-prada-2.jpg",
+    quote:"\"The throne was never empty.\"",
+    note:"Twenty years on, Runway is dying and Miranda Priestly is fighting for relevance in an industry she once defined. Andy Sachs returns — older, sharper, no longer flinching. A film about power, taste, and what it costs to stay at the top.",
+    meta:{Director:"David Frankel", Year:"2026", Watched:"May 2026", Tags:"Fashion · Power · Return"}
   }
 ];
 
