@@ -8,6 +8,9 @@ const films = [
     img:"posters/hail-mary.jpg",
     quote:"\"Question?\" — \"Answer.\"",
     note:"A solo astronaut wakes up alone, light-years from home, with a job to save the sun. What he finds instead is a friend.",
+    artist:"Kilian Eng",
+    artistWiki:"https://en.wikipedia.org/wiki/Kilian_Eng",
+    artStatement:"Eng's Moebius-descended cosmic illustrations carry a specific kind of warmth — vast architectural space rendered in jewel tones, a tiny human figure dwarfed by geometry but never alienated by it. That's exactly the emotional register of Hail Mary: the universe is enormous and you are very small, but somehow it still feels like home.",
     meta:{Director:"Phil Lord & Christopher Miller", Year:"2026", Watched:"April 2026", Tags:"Friendship · Solitude"}
   },
   {
@@ -18,6 +21,9 @@ const films = [
     img:"posters/mario-galaxy.jpg",
     quote:"\"The cosmos remembers.\"",
     note:"Mario in space. Rosalina. Lumas. The Comet Observatory. The poster maps the cast as a small constellation.",
+    artist:"Yayoi Kusama",
+    artistWiki:"https://en.wikipedia.org/wiki/Yayoi_Kusama",
+    artStatement:"Kusama's polka dots are obsession transmuted into tenderness — the same mark, repeated until it becomes a galaxy. Mario Galaxy is a children's film about loss and memory disguised as a platformer; Lumas are essentially Kusama dots given names. Repetition as warmth, multiplicity as company.",
     meta:{Director:"Aaron Horvath & Michael Jelenic", Year:"2026", Watched:"April 2026", Tags:"Adventure · Family"}
   },
   {
@@ -28,6 +34,9 @@ const films = [
     img:"posters/they-will-kill-you.jpg",
     quote:"\"The rent is murder.\"",
     note:"A woman takes a housekeeping job in a Manhattan high-rise that has eaten its tenants for decades. Bloody, stylish, knowingly absurd — Tarantino meets The Raid in a satanic apartment building.",
+    artist:"Tadanori Yokoo",
+    artistWiki:"https://en.wikipedia.org/wiki/Tadanori_Yokoo",
+    artStatement:"Yokoo's 1960s–70s silkscreens are operatic trash glamour: Rising Sun rays, blood reds and pulp pinks, occult collage that knows it's lurid and refuses to apologise. A movie about a haunted Manhattan apartment that eats its tenants deserves nothing less than a poster that bleeds from its own windows.",
     meta:{Director:"Kirill Sokolov", Year:"2026", Watched:"April 2026", Tags:"Horror · Comedy · Cult"}
   },
   {
@@ -38,6 +47,9 @@ const films = [
     img:"posters/interstellar.jpg",
     quote:"\"Mankind was born on Earth. It was never meant to die here.\"",
     note:"A father leaves Earth to find humanity a new home, traveling through a wormhole and falling toward the supermassive black hole Gargantua. Love, it turns out, is the one signal that crosses every dimension.",
+    artist:"Hilma af Klint",
+    artistWiki:"https://en.wikipedia.org/wiki/Hilma_af_Klint",
+    artStatement:"Af Klint was painting higher dimensions in 1907 — long before science had a vocabulary for them. Her gouache diagrams treat the cosmos as a spiritual instrument: nested circles, theosophical petals, love as signal across realms. Interstellar is the same diagram, drawn in the language of physics. Same mystic, different century.",
     meta:{Director:"Christopher Nolan", Year:"2014", Watched:"April 2026", Tags:"Space · Time · Love"}
   },
   {
@@ -48,6 +60,9 @@ const films = [
     img:"posters/devil-wears-prada-2.jpg",
     quote:"\"The throne was never empty.\"",
     note:"Twenty years on, Runway is dying and Miranda Priestly is fighting for relevance in an industry she once defined. Andy Sachs returns — older, sharper, no longer flinching. A film about power, taste, and what it costs to stay at the top.",
+    artist:"René Gruau",
+    artistWiki:"https://en.wikipedia.org/wiki/Ren%C3%A9_Gruau",
+    artStatement:"Gruau drew couture for Dior with one confident black brushstroke and a single drop of red — the entire grammar of mid-century fashion in a single mark. Miranda Priestly's whole worldview is one decisive gesture, no fuss, total command. Anything more rendered would be flinching, and Miranda doesn't flinch.",
     meta:{Director:"David Frankel", Year:"2026", Watched:"May 2026", Tags:"Fashion · Power · Return"}
   }
 ];
@@ -408,6 +423,15 @@ function openDetail(i){
   document.getElementById("dByline").textContent = f.byline;
   document.getElementById("dQuote").textContent = f.quote;
   document.getElementById("dNote").textContent = f.note;
+  const artBlock = document.getElementById("dArt");
+  if(f.artist && f.artStatement){
+    artBlock.style.display = "";
+    artBlock.innerHTML = `<div class="art-label">Artistic direction</div>
+      <p class="art-body">${f.artStatement}</p>
+      <a class="art-link" href="${f.artistWiki}" target="_blank" rel="noopener">In the style of ${f.artist} →</a>`;
+  } else {
+    artBlock.style.display = "none";
+  }
   document.getElementById("dMeta").innerHTML = Object.entries(f.meta).map(([k,v]) => `<dt>${k}</dt><dd>${v}</dd>`).join("");
   detail.classList.add("open");
 }
