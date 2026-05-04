@@ -1,1 +1,6 @@
 _dev/
+_backup_posters/
+.DS_Store
+*.psd
+*.ai
+node_modules/
