@@ -407,15 +407,63 @@ stage.addEventListener("wheel", e => {
   }
 }, {passive:false});
 
-let isDown=false, startX=0, startScroll=0, dragged=false;
-strip.addEventListener("mousedown", e => { isDown=true; dragged=false; startX=e.pageX; startScroll=stage.scrollLeft; strip.classList.add("dragging"); });
-window.addEventListener("mouseup", () => { isDown=false; strip.classList.remove("dragging"); });
-window.addEventListener("mousemove", e => {
-  if(!isDown) return;
-  const dx = e.pageX - startX;
+// Mouse drag (pointer events, mouse only — touch keeps native iOS scroll/snap).
+// During the drag we disable scroll-snap so direct scrollLeft writes don't fight
+// the snap engine. On release we smooth-scroll to the nearest frame and then
+// re-enable snap after the animation settles, so the re-enable can't yank.
+let isDown=false, startX=0, startScroll=0, dragged=false, activePointerId=null;
+let snapRestoreTimer=null;
+
+strip.addEventListener("pointerdown", e => {
+  if(e.pointerType !== "mouse") return;
+  isDown=true; dragged=false;
+  startX=e.clientX; startScroll=stage.scrollLeft;
+  activePointerId=e.pointerId;
+  strip.classList.add("dragging");
+  stage.style.scrollSnapType = "none";
+  if(snapRestoreTimer){ clearTimeout(snapRestoreTimer); snapRestoreTimer=null; }
+  try { strip.setPointerCapture(activePointerId); } catch(_){}
+});
+
+strip.addEventListener("pointermove", e => {
+  if(!isDown || e.pointerId !== activePointerId) return;
+  const dx = e.clientX - startX;
   if(Math.abs(dx) > 6) dragged = true;
   stage.scrollLeft = startScroll - dx;
 });
+
+function endDrag(e){
+  if(!isDown) return;
+  if(e && e.pointerId !== activePointerId) return;
+  isDown=false;
+  strip.classList.remove("dragging");
+  try { strip.releasePointerCapture(activePointerId); } catch(_){}
+  activePointerId=null;
+
+  // Smooth-snap to nearest frame center.
+  const center = window.innerWidth / 2;
+  const items = strip.querySelectorAll(".frame, .endcard");
+  let bestEl=null, bestDist=Infinity;
+  items.forEach(f => {
+    const r = f.getBoundingClientRect();
+    const d = Math.abs((r.left + r.right)/2 - center);
+    if(d < bestDist){ bestDist = d; bestEl = f; }
+  });
+  if(bestEl){
+    const r = bestEl.getBoundingClientRect();
+    const delta = (r.left + r.right)/2 - center;
+    stage.scrollTo({left: stage.scrollLeft + delta, behavior: "smooth"});
+  }
+  // Re-enable snap once the smooth scroll has settled.
+  snapRestoreTimer = setTimeout(() => {
+    stage.style.scrollSnapType = "";
+    snapRestoreTimer = null;
+  }, 550);
+  // Clear `dragged` after click would have fired, so the click handler suppresses it.
+  setTimeout(() => { dragged = false; }, 50);
+}
+strip.addEventListener("pointerup", endDrag);
+strip.addEventListener("pointercancel", endDrag);
 
 document.addEventListener("keydown", e => {
   if(document.getElementById("detail").classList.contains("open")){
