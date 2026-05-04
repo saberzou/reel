@@ -399,105 +399,51 @@ stage.addEventListener("scroll", () => requestAnimationFrame(updateActive), {pas
 window.addEventListener("resize", updateActive);
 updateActive();
 
-// ===================== INTERACTIONS — fluid scroll + drag =====================
-// Wheel: smooth horizontal scroll using a target value that the loop eases toward.
-// Drag (mouse + touch): direct 1:1 follow + velocity-based momentum on release.
-let targetScroll = stage.scrollLeft;
-let wheelEasing = false;
-let velocity = 0;          // px / frame, used for momentum after drag
-let lastDragX = 0;
-let lastDragT = 0;
-let momentumRAF = 0;
-
-function clampScroll(v){
-  return Math.max(0, Math.min(stage.scrollWidth - stage.clientWidth, v));
-}
-
-function smoothLoop(){
-  const diff = targetScroll - stage.scrollLeft;
-  if(Math.abs(diff) < 0.5){
-    stage.scrollLeft = targetScroll;
-    wheelEasing = false;
-    return;
-  }
-  stage.scrollLeft += diff * 0.18; // ease factor
-  requestAnimationFrame(smoothLoop);
-}
+// ===================== INTERACTIONS — simple + native-friendly =====================
+// Mouse: pointer-based drag with image-drag prevented. Touch: trust native momentum scroll.
+// Wheel: vertical wheel maps to horizontal scroll.
 
 stage.addEventListener("wheel", e => {
-  // Treat vertical wheel (trackpad/mouse) as horizontal scroll, but also respect native horizontal wheel.
-  const dx = Math.abs(e.deltaX) > Math.abs(e.deltaY) ? e.deltaX : e.deltaY;
-  if(dx === 0) return;
-  e.preventDefault();
-  cancelAnimationFrame(momentumRAF);
-  velocity = 0;
-  targetScroll = clampScroll(targetScroll + dx);
-  if(!wheelEasing){ wheelEasing = true; requestAnimationFrame(smoothLoop); }
+  if(Math.abs(e.deltaY) > Math.abs(e.deltaX)){
+    e.preventDefault();
+    stage.scrollLeft += e.deltaY;
+  }
 }, {passive:false});
 
-let isDown = false, startX = 0, startScroll = 0, dragged = false;
+let isDown = false, startX = 0, startScroll = 0, dragged = false, dragPid = null;
 
-function beginDrag(x){
+// Prevent the browser's native image-drag ghost which steals the mousemove stream.
+strip.addEventListener("dragstart", e => e.preventDefault());
+strip.querySelectorAll("img").forEach(img => img.draggable = false);
+
+strip.addEventListener("pointerdown", e => {
+  if(e.pointerType === "touch") return; // let native scroll handle touch
   isDown = true;
   dragged = false;
-  startX = x;
+  startX = e.clientX;
   startScroll = stage.scrollLeft;
-  lastDragX = x;
-  lastDragT = performance.now();
-  velocity = 0;
-  cancelAnimationFrame(momentumRAF);
-  wheelEasing = false;
-  targetScroll = stage.scrollLeft;
+  dragPid = e.pointerId;
+  strip.setPointerCapture(e.pointerId);
   strip.classList.add("dragging");
-}
-function moveDrag(x){
-  if(!isDown) return;
-  const dx = x - startX;
+});
+strip.addEventListener("pointermove", e => {
+  if(!isDown || e.pointerId !== dragPid) return;
+  const dx = e.clientX - startX;
   if(Math.abs(dx) > 6) dragged = true;
-  const next = clampScroll(startScroll - dx);
-  stage.scrollLeft = next;
-  targetScroll = next;
-  // Track instantaneous velocity for momentum (px since last sample, sign relative to scroll direction).
-  const now = performance.now();
-  const dt = Math.max(8, now - lastDragT);
-  velocity = ((lastDragX - x) / dt) * 16; // px per ~frame
-  lastDragX = x;
-  lastDragT = now;
-}
-function endDrag(){
+  stage.scrollLeft = startScroll - dx;
+});
+function releasePointer(e){
   if(!isDown) return;
   isDown = false;
-  strip.classList.remove("dragging");
-  // Momentum: keep moving in last drag direction, decay smoothly.
-  if(Math.abs(velocity) > 0.5){
-    const tick = () => {
-      stage.scrollLeft = clampScroll(stage.scrollLeft + velocity);
-      targetScroll = stage.scrollLeft;
-      velocity *= 0.94; // friction
-      if(Math.abs(velocity) > 0.4){
-        momentumRAF = requestAnimationFrame(tick);
-      }
-    };
-    momentumRAF = requestAnimationFrame(tick);
+  if(dragPid !== null && strip.hasPointerCapture && strip.hasPointerCapture(dragPid)){
+    strip.releasePointerCapture(dragPid);
   }
+  dragPid = null;
+  strip.classList.remove("dragging");
 }
-
-// Mouse
-strip.addEventListener("mousedown", e => beginDrag(e.pageX));
-window.addEventListener("mousemove", e => moveDrag(e.pageX));
-window.addEventListener("mouseup", endDrag);
-
-// Touch — primary input on mobile, fully smooth like mouse drag
-strip.addEventListener("touchstart", e => {
-  if(!e.touches[0]) return;
-  beginDrag(e.touches[0].pageX);
-}, {passive:true});
-window.addEventListener("touchmove", e => {
-  if(!isDown || !e.touches[0]) return;
-  moveDrag(e.touches[0].pageX);
-}, {passive:true});
-window.addEventListener("touchend", endDrag);
-window.addEventListener("touchcancel", endDrag);
+strip.addEventListener("pointerup", releasePointer);
+strip.addEventListener("pointercancel", releasePointer);
+strip.addEventListener("pointerleave", releasePointer);
 
 document.addEventListener("keydown", e => {
   if(document.getElementById("detail").classList.contains("open")){
