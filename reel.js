@@ -65,7 +65,7 @@ const films = [
     artStatement:"Gruau drew couture for Dior with one confident black brushstroke and a single drop of red — the entire grammar of mid-century fashion in a single mark. Miranda Priestly's whole worldview is one decisive gesture, no fuss, total command. Anything more rendered would be flinching, and Miranda doesn't flinch.",
     meta:{Director:"David Frankel", Year:"2026", Watched:"May 2026", Tags:"Fashion · Power · Return"}
   }
-];
+].reverse();
 
 // ===================== WEBGL DISPLACEMENT (Justine-style) =====================
 // Each poster gets a small WebGL canvas overlay running a flowing displacement
