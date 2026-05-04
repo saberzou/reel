@@ -337,9 +337,14 @@ strip.appendChild(end);
 
 document.getElementById("cntTot").textContent = String(films.length).padStart(2,"0");
 
-// Render loop
+// Render loop — pause when tab hidden, only render active + adjacent frames
 function loop(){
-  renderers.forEach(r => r.gl.render());
+  if(!document.hidden){
+    const ai = currentIdx < 0 ? 0 : currentIdx;
+    renderers.forEach((r,i) => {
+      if(Math.abs(i - ai) <= 1) r.gl.render();
+    });
+  }
   requestAnimationFrame(loop);
 }
 loop();
