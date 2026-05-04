@@ -306,7 +306,7 @@ films.forEach((f,i) => {
   const gl = new PosterGL(canvas, f.img);
   renderers.push({gl, frame, poster});
 
-  poster.addEventListener("click", () => openDetail(i));
+  poster.addEventListener("click", () => { if(dragged) return; openDetail(i); });
   poster.addEventListener("mouseenter", () => gl.setHover(true));
   poster.addEventListener("mouseleave", () => { gl.setHover(false); gl.setMouse(-1,-1); });
   poster.addEventListener("mousemove", e => {
@@ -397,10 +397,15 @@ stage.addEventListener("wheel", e => {
   }
 }, {passive:false});
 
-let isDown=false, startX=0, startScroll=0;
-strip.addEventListener("mousedown", e => { isDown=true; startX=e.pageX; startScroll=stage.scrollLeft; strip.classList.add("dragging"); });
+let isDown=false, startX=0, startScroll=0, dragged=false;
+strip.addEventListener("mousedown", e => { isDown=true; dragged=false; startX=e.pageX; startScroll=stage.scrollLeft; strip.classList.add("dragging"); });
 window.addEventListener("mouseup", () => { isDown=false; strip.classList.remove("dragging"); });
-window.addEventListener("mousemove", e => { if(!isDown) return; stage.scrollLeft = startScroll - (e.pageX - startX); });
+window.addEventListener("mousemove", e => {
+  if(!isDown) return;
+  const dx = e.pageX - startX;
+  if(Math.abs(dx) > 6) dragged = true;
+  stage.scrollLeft = startScroll - dx;
+});
 
 document.addEventListener("keydown", e => {
   if(document.getElementById("detail").classList.contains("open")){
