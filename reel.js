@@ -379,7 +379,7 @@ function updateActive(){
       npType.textContent = f.type + "  ·  " + f.byline;
       nameplate.classList.add("show");
     }, 100);
-    cntCur.textContent = String(bestIdx+1).padStart(2,"0");
+    cntCur.textContent = f.no;
   } else {
     nameplate.classList.remove("show");
     cntCur.textContent = "—";
