@@ -328,10 +328,10 @@ const end = document.createElement("div");
 end.className = "endcard";
 end.dataset.idx = films.length;
 end.innerHTML = `
-  <h2>films, reimagined as <em>posters</em>.</h2>
+  <h2>Movie posters, <em>reimagined</em>.</h2>
   <p>A slow personal record of the films I love — translated into the visual language I'd want to hang on my wall. One film. One poster. One quiet idea.</p>
   <p>No spoilers. No star ratings. Just attention.</p>
-  <div class="sig">— Saber, Shanghai</div>
+  <div class="sig">— Saber, Beijing</div>
 `;
 strip.appendChild(end);
 

@@ -1,6 +1,6 @@
 # Reel — A Cinema Journal
 
-Films, reimagined as posters. A slow personal record by Saber Zou.
+Movie posters, reimagined. A slow personal record by Saber Zou.
 
 Live: https://saberzou.github.io/reel
 
