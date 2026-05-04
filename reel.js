@@ -73,9 +73,9 @@ const films = [
     img:"posters/avatar-fire-and-ash.jpg",
     quote:"\"Pandora has many faces. Not all of them love you back.\"",
     note:"The Sully family meets the Ash People — a Na'vi clan forged in volcanic fire — while still mourning at the edge of the sea. A film about grief, vengeance, and learning that the world that raised you is bigger and stranger than your own tribe.",
-    artist:"Anselm Kiefer",
-    artistWiki:"https://en.wikipedia.org/wiki/Anselm_Kiefer",
-    artStatement:"Kiefer is the only major painter whose actual material is ash. His scorched-earth canvases — burnt straw, lead sheet, oxidised gold leaf, a single German word scrawled in chalk across the smoke — are about the aftermath, not the spectacle. Pairing him with the most maximalist franchise in cinema is the joke and the truth at once: the volcano clan don't need bioluminescent splendour, they need a Kiefer field. ASCHE, written across a sky that has already burned.",
+    artist:"James Jean",
+    artistWiki:"https://en.wikipedia.org/wiki/James_Jean",
+    artStatement:"James Jean paints the world the way a fairytale remembers it — Hokusai woodblock, Klimt's gold leaf, and manga line all folded into one ornate, jewel-toned tableau. Pandora has always wanted to be a myth, not a war zone. So the Na'vi stands between two spirits: a phoenix of vermilion fire on one shoulder, a jade koi of curling water at her hip, the floating mountains drifting from her braid like incense smoke. Fire and ash, but rendered as scripture instead of scar tissue.",
     meta:{Director:"James Cameron", Year:"2025", Watched:"May 2026", Tags:"Pandora · Family · Elemental"}
   }
 ].reverse();
