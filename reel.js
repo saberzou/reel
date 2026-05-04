@@ -355,7 +355,7 @@ const nameplate = document.getElementById("nameplate");
 const npNum = document.getElementById("npNum");
 const npType = document.getElementById("npType");
 const cntCur = document.getElementById("cntCur");
-let currentIdx = -1;
+let currentIdx = 0;
 
 function updateActive(){
   const center = window.innerWidth / 2;
@@ -366,7 +366,7 @@ function updateActive(){
     const d = Math.abs((r.left + r.right)/2 - center);
     if(d < bestDist){ bestDist = d; bestIdx = i; }
   });
-  if(bestIdx === currentIdx) return;
+  if(bestIdx === currentIdx && nameplate.classList.contains("show")) return;
   currentIdx = bestIdx;
   items.forEach((f,i) => f.classList.toggle("active", i===bestIdx));
   renderers.forEach((r,i) => r.gl.setActive(i === bestIdx));
@@ -387,7 +387,7 @@ function updateActive(){
 }
 stage.addEventListener("scroll", () => requestAnimationFrame(updateActive), {passive:true});
 window.addEventListener("resize", updateActive);
-setTimeout(updateActive, 200);
+updateActive();
 
 // ===================== INTERACTIONS =====================
 stage.addEventListener("wheel", e => {
