@@ -73,9 +73,9 @@ const films = [
     img:"posters/avatar-fire-and-ash.jpg",
     quote:"\"Pandora has many faces. Not all of them love you back.\"",
     note:"The Sully family meets the Ash People — a Na'vi clan forged in volcanic fire — while still mourning at the edge of the sea. A film about grief, vengeance, and learning that the world that raised you is bigger and stranger than your own tribe.",
-    artist:"Saul Bass",
-    artistWiki:"https://en.wikipedia.org/wiki/Saul_Bass",
-    artStatement:"Bass built whole films into single bold cuts — a falling man, a severed arm, a torn poster — and trusted the audience to feel the rest. Avatar 3 is fundamentally a film about being torn between two elements (fire and water, ash and ocean, two families) and Bass's whole language was the geometry of the split. One body, two halves, one seam holding it together.",
+    artist:"Anselm Kiefer",
+    artistWiki:"https://en.wikipedia.org/wiki/Anselm_Kiefer",
+    artStatement:"Kiefer is the only major painter whose actual material is ash. His scorched-earth canvases — burnt straw, lead sheet, oxidised gold leaf, a single German word scrawled in chalk across the smoke — are about the aftermath, not the spectacle. Pairing him with the most maximalist franchise in cinema is the joke and the truth at once: the volcano clan don't need bioluminescent splendour, they need a Kiefer field. ASCHE, written across a sky that has already burned.",
     meta:{Director:"James Cameron", Year:"2025", Watched:"May 2026", Tags:"Pandora · Family · Elemental"}
   }
 ].reverse();
