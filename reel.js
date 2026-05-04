@@ -64,6 +64,19 @@ const films = [
     artistWiki:"https://en.wikipedia.org/wiki/Ren%C3%A9_Gruau",
     artStatement:"Gruau drew couture for Dior with one confident black brushstroke and a single drop of red — the entire grammar of mid-century fashion in a single mark. Miranda Priestly's whole worldview is one decisive gesture, no fuss, total command. Anything more rendered would be flinching, and Miranda doesn't flinch.",
     meta:{Director:"David Frankel", Year:"2026", Watched:"May 2026", Tags:"Fashion · Power · Return"}
+  },
+  {
+    key:"avatar-fire-and-ash", no:"06",
+    title:"avatar: fire and ash",
+    type:"Sci-Fi · 2025",
+    byline:"A film by James Cameron · written by James Cameron, Rick Jaffa & Amanda Silver",
+    img:"posters/avatar-fire-and-ash.jpg",
+    quote:"\"Pandora has many faces. Not all of them love you back.\"",
+    note:"The Sully family meets the Ash People — a Na'vi clan forged in volcanic fire — while still mourning at the edge of the sea. A film about grief, vengeance, and learning that the world that raised you is bigger and stranger than your own tribe.",
+    artist:"Saul Bass",
+    artistWiki:"https://en.wikipedia.org/wiki/Saul_Bass",
+    artStatement:"Bass built whole films into single bold cuts — a falling man, a severed arm, a torn poster — and trusted the audience to feel the rest. Avatar 3 is fundamentally a film about being torn between two elements (fire and water, ash and ocean, two families) and Bass's whole language was the geometry of the split. One body, two halves, one seam holding it together.",
+    meta:{Director:"James Cameron", Year:"2025", Watched:"May 2026", Tags:"Pandora · Family · Elemental"}
   }
 ].reverse();
 
