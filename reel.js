@@ -77,6 +77,19 @@ const films = [
     artistWiki:"https://en.wikipedia.org/wiki/James_Jean",
     artStatement:"James Jean paints the world the way a fairytale remembers it — Hokusai woodblock, Klimt's gold leaf, and manga line all folded into one ornate, jewel-toned tableau. Pandora has always wanted to be a myth, not a war zone. So the Na'vi stands between two spirits: a phoenix of vermilion fire on one shoulder, a jade koi of curling water at her hip, the floating mountains drifting from her braid like incense smoke. Fire and ash, but rendered as scripture instead of scar tissue.",
     meta:{Director:"James Cameron", Year:"2025", Watched:"May 2026", Tags:"Pandora · Family · Elemental"}
+  },
+  {
+    key:"greedy-people", no:"07",
+    title:"greedy people",
+    type:"Dark Comedy · 2024",
+    byline:"A film by Potsy Ponciroli · written by Mike Vukadinovich",
+    img:"posters/greedy-people.jpg",
+    quote:"\"It's only a town until the money shows up.\"",
+    note:"A sleepy coastal town finds a stash of cash and quietly comes apart at the seams. Small lies become big ones, neighbors become suspects, and ordinary people discover exactly how much they're willing to bend. Funny until it isn't.",
+    artist:"Noma Bar",
+    artistWiki:"https://en.wikipedia.org/wiki/Noma_Bar",
+    artStatement:"Noma Bar builds entire stories out of one shape and a punchline hidden in the negative space — the cleanest possible way to say something dirty. Greedy People is exactly that joke: the town and the money are the same silhouette, and you only notice the single drop of blood once you've already smiled. The pun is the plot.",
+    meta:{Director:"Potsy Ponciroli", Year:"2024", Watched:"May 2026", Tags:"Greed · Small Town · Crime"}
   }
 ].reverse();
 
