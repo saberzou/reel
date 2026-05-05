@@ -433,16 +433,19 @@ strip.addEventListener("pointerdown", e => {
   startX=e.clientX; startScroll=stage.scrollLeft;
   activePointerId=e.pointerId;
   strip.classList.add("dragging");
-  stage.style.scrollSnapType = "none";
   if(snapRestoreTimer){ clearTimeout(snapRestoreTimer); snapRestoreTimer=null; }
-  try { strip.setPointerCapture(activePointerId); } catch(_){}
+  // Don't capture pointer or disable snap yet — only on real drag, so clicks reach posters.
 });
 
 strip.addEventListener("pointermove", e => {
   if(!isDown || e.pointerId !== activePointerId) return;
   const dx = e.clientX - startX;
-  if(Math.abs(dx) > 6) dragged = true;
-  stage.scrollLeft = startScroll - dx;
+  if(!dragged && Math.abs(dx) > 6){
+    dragged = true;
+    stage.style.scrollSnapType = "none";
+    try { strip.setPointerCapture(activePointerId); } catch(_){}
+  }
+  if(dragged) stage.scrollLeft = startScroll - dx;
 });
 
 function endDrag(e){
