@@ -456,6 +456,9 @@ function endDrag(e){
   try { strip.releasePointerCapture(activePointerId); } catch(_){}
   activePointerId=null;
 
+  // No real drag — it was a click. Don't scroll; let the click fire on the poster.
+  if(!dragged) return;
+
   // Smooth-snap to nearest frame center.
   const center = window.innerWidth / 2;
   const items = strip.querySelectorAll(".frame, .endcard");
