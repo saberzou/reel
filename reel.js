@@ -90,6 +90,19 @@ const films = [
     artistWiki:"https://en.wikipedia.org/wiki/Noma_Bar",
     artStatement:"Noma Bar builds entire stories out of one shape and a punchline hidden in the negative space — the cleanest possible way to say something dirty. Greedy People is exactly that joke: the town and the money are the same silhouette, and you only notice the single drop of blood once you've already smiled. The pun is the plot.",
     meta:{Director:"Potsy Ponciroli", Year:"2024", Watched:"May 2026", Tags:"Greed · Small Town · Crime"}
+  },
+  {
+    key:"formula-1", no:"08",
+    title:"formula 1",
+    type:"Sports drama · 2026",
+    byline:"A film by Joseph Kosinski · written by Ehren Kruger",
+    img:"posters/formula-1.jpg",
+    quote:"\"You don't slow down. You aim.\"",
+    note:"A washed-up driver returns to the grid for one last season — mentor to a hot-headed rookie, ghost to his own younger self. Kosinski shoots it like Top Gun on four wheels: low-slung lenses, real cars at full chat, the sound of a V6 hybrid screaming through Monaco.",
+    artist:"A.M. Cassandre",
+    artistWiki:"https://en.wikipedia.org/wiki/A._M._Cassandre",
+    artStatement:"Cassandre drew speed before photography knew how to. His 1920s posters for ocean liners and railways stripped a vehicle down to two diagonals, a streak of air, and a single jewel of color — not a depiction of motion but a monument to it. Formula 1 is the same idea at 350 km/h: the car as pure geometry, the track as proof that the laws of physics can be elegant. No driver's face, no sponsor logos. Just the shape of going.",
+    meta:{Director:"Joseph Kosinski", Year:"2026", Watched:"May 2026", Tags:"Speed · Mentorship · Comeback"}
   }
 ].reverse();
 
