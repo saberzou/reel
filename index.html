@@ -66,7 +66,7 @@
   .frame .poster img{filter:drop-shadow(0 30px 60px rgba(62,2,4,.28)) drop-shadow(0 6px 14px rgba(62,2,4,.14))}
 
   /* === End card === */
-  .endcard{flex:0 0 auto;height:70vh;width:min(560px,72vh);scroll-snap-align:center;margin:0 9vw;display:flex;flex-direction:column;justify-content:center;gap:20px;padding:0 12px;transition:opacity .6s}
+  .endcard{flex:0 0 auto;height:70vh;width:min(560px,72vh,86vw);scroll-snap-align:center;margin:0 9vw;display:flex;flex-direction:column;justify-content:center;gap:20px;padding:0 12px;transition:opacity .6s}
   .endcard:not(.active){opacity:.4}
   .endcard h2{font-family:"Cormorant Garamond",serif;font-weight:400;font-size:48px;line-height:1.02;letter-spacing:-.015em}
   .endcard h2 em{font-style:italic;color:var(--accent)}
@@ -136,6 +136,10 @@
     .topbar{padding:18px 20px}
     .nav .vol{display:none}
     .counter{bottom:5dvh;left:50%;transform:translateX(-50%);text-align:center}
+    .endcard{width:84vw;height:auto;min-height:62dvh;margin:0 8vw;padding:0 4px;gap:14px;transform:translateY(-4dvh)}
+    .endcard h2{font-size:34px;line-height:1.05}
+    .endcard p{font-size:15px;line-height:1.5}
+    .endcard .sig{font-size:13px}
   }
 </style>
 </head>
