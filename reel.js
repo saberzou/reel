@@ -73,9 +73,9 @@ const films = [
     img:"posters/avatar-fire-and-ash.jpg",
     quote:"\"Pandora has many faces. Not all of them love you back.\"",
     note:"The Sully family meets the Ash People — a Na'vi clan forged in volcanic fire — while still mourning at the edge of the sea. A film about grief, vengeance, and learning that the world that raised you is bigger and stranger than your own tribe.",
-    artist:"Remedios Varo",
-    artistWiki:"https://en.wikipedia.org/wiki/Remedios_Varo",
-    artStatement:"Varo painted impossible worlds with a botanist's obsessiveness — tiny precise figures navigating floating architecture, mystical flora, dreamscapes that feel more real than reality. Pandora is exactly that: a living organism with its own logic, indifferent to human categories of fire and water. The Na'vi belongs here the way Varo's travelers always belong — small, purposeful, suspended between forces much larger than themselves.",
+    artist:"Kehinde Wiley",
+    artistWiki:"https://en.wikipedia.org/wiki/Kehinde_Wiley",
+    artStatement:"Wiley takes the grammar of Old Masters portraiture — the formal pose, the decorative ground, the sense that the subject commands the room — and fills it with bodies that were never invited into those frames. A Na'vi warrior surrounded by Pandoran flora, painted like royalty, is exactly that move: the alien world insisting on its own dignity in the language of the museum. Lush, unapologetic, impossible to ignore.",
     meta:{Director:"James Cameron", Year:"2025", Watched:"May 2026", Tags:"Pandora · Family · Elemental"}
   },
   {
@@ -99,9 +99,9 @@ const films = [
     img:"posters/formula-1.jpg",
     quote:"\"You don't slow down. You aim.\"",
     note:"A washed-up driver returns to the grid for one last season — mentor to a hot-headed rookie, ghost to his own younger self. Kosinski shoots it like Top Gun on four wheels: low-slung lenses, real cars at full chat, the sound of a V6 hybrid screaming through Monaco.",
-    artist:"Fortunato Depero",
-    artistWiki:"https://en.wikipedia.org/wiki/Fortunato_Depero",
-    artStatement:"Depero was the Futurists' advertising man — he turned speed into a religion and machines into gods, all with flat color and diagonal force. Formula 1 the film is that same act of worship: not a race but a manifesto. The car isn't depicted, it's detonated across the canvas.",
+    artist:"Peter Saville",
+    artistWiki:"https://en.wikipedia.org/wiki/Peter_Saville_(graphic_designer)",
+    artStatement:"Saville made grief look like design and silence look like a record sleeve. Unknown Pleasures wasn't about Joy Division — it was a radio pulse from a dead star, stripped of all sentiment. Formula 1 at 300km/h is the same data: a lap-time trace, a waveform, a single red line. The spectacle is gone. What's left is the signal.",
     meta:{Director:"Joseph Kosinski", Year:"2026", Watched:"May 2026", Tags:"Speed · Mentorship · Comeback"}
   },
   {
