@@ -99,9 +99,9 @@ const films = [
     img:"posters/formula-1.jpg",
     quote:"\"You don't slow down. You aim.\"",
     note:"A washed-up driver returns to the grid for one last season — mentor to a hot-headed rookie, ghost to his own younger self. Kosinski shoots it like Top Gun on four wheels: low-slung lenses, real cars at full chat, the sound of a V6 hybrid screaming through Monaco.",
-    artist:"A.M. Cassandre",
-    artistWiki:"https://en.wikipedia.org/wiki/A._M._Cassandre",
-    artStatement:"Cassandre drew speed before photography knew how to. His 1920s posters for ocean liners and railways stripped a vehicle down to two diagonals, a streak of air, and a single jewel of color — not a depiction of motion but a monument to it. Formula 1 is the same idea at 350 km/h: the car as pure geometry, the track as proof that the laws of physics can be elegant. No driver's face, no sponsor logos. Just the shape of going.",
+    artist:"Fortunato Depero",
+    artistWiki:"https://en.wikipedia.org/wiki/Fortunato_Depero",
+    artStatement:"Depero was the Futurists' advertising man — he turned speed into a religion and machines into gods, all with flat color and diagonal force. Formula 1 the film is that same act of worship: not a race but a manifesto. The car isn't depicted, it's detonated across the canvas.",
     meta:{Director:"Joseph Kosinski", Year:"2026", Watched:"May 2026", Tags:"Speed · Mentorship · Comeback"}
   },
   {
