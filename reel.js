@@ -73,9 +73,9 @@ const films = [
     img:"posters/avatar-fire-and-ash.jpg",
     quote:"\"Pandora has many faces. Not all of them love you back.\"",
     note:"The Sully family meets the Ash People — a Na'vi clan forged in volcanic fire — while still mourning at the edge of the sea. A film about grief, vengeance, and learning that the world that raised you is bigger and stranger than your own tribe.",
-    artist:"James Jean",
-    artistWiki:"https://en.wikipedia.org/wiki/James_Jean",
-    artStatement:"James Jean paints the world the way a fairytale remembers it — Hokusai woodblock, Klimt's gold leaf, and manga line all folded into one ornate, jewel-toned tableau. Pandora has always wanted to be a myth, not a war zone. So the Na'vi stands between two spirits: a phoenix of vermilion fire on one shoulder, a jade koi of curling water at her hip, the floating mountains drifting from her braid like incense smoke. Fire and ash, but rendered as scripture instead of scar tissue.",
+    artist:"Remedios Varo",
+    artistWiki:"https://en.wikipedia.org/wiki/Remedios_Varo",
+    artStatement:"Varo painted impossible worlds with a botanist's obsessiveness — tiny precise figures navigating floating architecture, mystical flora, dreamscapes that feel more real than reality. Pandora is exactly that: a living organism with its own logic, indifferent to human categories of fire and water. The Na'vi belongs here the way Varo's travelers always belong — small, purposeful, suspended between forces much larger than themselves.",
     meta:{Director:"James Cameron", Year:"2025", Watched:"May 2026", Tags:"Pandora · Family · Elemental"}
   },
   {
