@@ -92,19 +92,6 @@ const films = [
     meta:{Director:"Potsy Ponciroli", Year:"2024", Watched:"May 2026", Tags:"Greed · Small Town · Crime"}
   },
   {
-    key:"good-fortune", no:"09",
-    title:"good fortune",
-    type:"Comedy · 2025",
-    byline:"A film by Aziz Ansari",
-    img:"posters/good-fortune.jpg",
-    quote:"\"Heaven means well.\"",
-    note:"An inept angel named Gabriel meddles in the lives of a gig worker and a venture capitalist in LA. Sweet, absurd, a little crooked — like a halo that's slightly tilted.",
-    artist:"Charley Harper",
-    artistWiki:"https://en.wikipedia.org/wiki/Charley_Harper",
-    artStatement:"Harper reduced every living thing to its most essential geometry — a bird became three ovals and a triangle, a fish a single curve. The magic was that nothing was lost in the reduction; somehow you got more of the animal, not less. Gabriel the angel is that idea: strip away the CGI wings and the celestial grandeur and what's left is just a tilted halo and two tiny humans looking up at it. The clumsiness of goodness, rendered in four flat colors.",
-    meta:{Director:"Aziz Ansari", Year:"2025", Watched:"May 2026", Tags:"Comedy · Angels · LA"}
-  },
-  {
     key:"formula-1", no:"08",
     title:"formula 1",
     type:"Sports drama · 2026",
@@ -116,6 +103,19 @@ const films = [
     artistWiki:"https://en.wikipedia.org/wiki/A._M._Cassandre",
     artStatement:"Cassandre drew speed before photography knew how to. His 1920s posters for ocean liners and railways stripped a vehicle down to two diagonals, a streak of air, and a single jewel of color — not a depiction of motion but a monument to it. Formula 1 is the same idea at 350 km/h: the car as pure geometry, the track as proof that the laws of physics can be elegant. No driver's face, no sponsor logos. Just the shape of going.",
     meta:{Director:"Joseph Kosinski", Year:"2026", Watched:"May 2026", Tags:"Speed · Mentorship · Comeback"}
+  },
+  {
+    key:"good-fortune", no:"09",
+    title:"good fortune",
+    type:"Comedy · 2025",
+    byline:"A film by Aziz Ansari",
+    img:"posters/good-fortune.jpg",
+    quote:"\"Heaven means well.\"",
+    note:"An inept angel named Gabriel meddles in the lives of a gig worker and a venture capitalist in LA. Sweet, absurd, a little crooked — like a halo that's slightly tilted.",
+    artist:"Charley Harper",
+    artistWiki:"https://en.wikipedia.org/wiki/Charley_Harper",
+    artStatement:"Harper reduced every living thing to its most essential geometry — a bird became three ovals and a triangle, a fish a single curve. The magic was that nothing was lost in the reduction; somehow you got more of the animal, not less. Gabriel the angel is that idea: strip away the CGI wings and the celestial grandeur and what's left is just a tilted halo and two tiny humans looking up at it. The clumsiness of goodness, rendered in four flat colors.",
+    meta:{Director:"Aziz Ansari", Year:"2025", Watched:"May 2026", Tags:"Comedy · Angels · LA"}
   }
 ].reverse();
 
