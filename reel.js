@@ -99,9 +99,9 @@ const films = [
     img:"posters/formula-1.jpg",
     quote:"\"You don't slow down. You aim.\"",
     note:"A washed-up driver returns to the grid for one last season — mentor to a hot-headed rookie, ghost to his own younger self. Kosinski shoots it like Top Gun on four wheels: low-slung lenses, real cars at full chat, the sound of a V6 hybrid screaming through Monaco.",
-    artist:"Peter Saville",
-    artistWiki:"https://en.wikipedia.org/wiki/Peter_Saville_(graphic_designer)",
-    artStatement:"Saville made grief look like design and silence look like a record sleeve. Unknown Pleasures wasn't about Joy Division — it was a radio pulse from a dead star, stripped of all sentiment. Formula 1 at 300km/h is the same data: a lap-time trace, a waveform, a single red line. The spectacle is gone. What's left is the signal.",
+    artist:"Giacomo Balla",
+    artistWiki:"https://en.wikipedia.org/wiki/Giacomo_Balla",
+    artStatement:"Balla didn't paint cars — he painted what a car does to the air around it. Abstract Speed + Sound, Speeding Automobile — the vehicle is gone, only the force remains. Formula 1 at 300km/h isn't a machine you see, it's a pressure wave that hits you before you hear it. The poster isn't a picture of a race. It's the blast.",
     meta:{Director:"Joseph Kosinski", Year:"2026", Watched:"May 2026", Tags:"Speed · Mentorship · Comeback"}
   },
   {
