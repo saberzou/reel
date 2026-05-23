@@ -116,6 +116,19 @@ const films = [
     artistWiki:"https://en.wikipedia.org/wiki/Charley_Harper",
     artStatement:"Harper reduced every living thing to its most essential geometry — a bird became three ovals and a triangle, a fish a single curve. The magic was that nothing was lost in the reduction; somehow you got more of the animal, not less. Gabriel the angel is that idea: strip away the CGI wings and the celestial grandeur and what's left is just a tilted halo and two tiny humans looking up at it. The clumsiness of goodness, rendered in four flat colors.",
     meta:{Director:"Aziz Ansari", Year:"2025", Watched:"May 2026", Tags:"Comedy · Angels · LA"}
+  },
+  {
+    key:"the-mummy", no:"10",
+    title:"the mummy",
+    type:"Horror · 2026",
+    byline:"A film by Lee Cronin",
+    img:"posters/the-mummy.jpg",
+    quote:"\"What was buried did not stay buried.\"",
+    note:"Lee Cronin drags the mummy back to where it belongs: not adventure, not camp, but a slow body-horror reckoning with the things older cultures knew about death and we tried to forget.",
+    artist:"Francisco Goya (Black Paintings)",
+    artistWiki:"https://en.wikipedia.org/wiki/Black_Paintings",
+    artStatement:"Goya painted his Black Paintings directly onto the walls of his house, in bitumen and candlelight, never meaning anyone to see them. They are dread as a private language — the body as a site of horror, the divine as something rotten. Lee Cronin's Mummy works in exactly that register: not a monster movie but a religious nightmare, a figure barely emerging from darkness with one bleed of red where the wraps give way.",
+    meta:{Director:"Lee Cronin", Year:"2026", Watched:"May 2026", Tags:"Horror · Body · Dread"}
   }
 ].reverse();
 
