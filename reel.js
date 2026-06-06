@@ -136,11 +136,11 @@ const films = [
     type:"Martial arts · 2025",
     byline:"A film by Simon McQuoid · written by Jeremy Slater",
     img:"posters/mortal-kombat-2.jpg",
-    quote:"\"The tournament was never a game.\"",
-    note:"Earthrealm's champions are summoned to Outworld for the tournament that decides whether their world keeps existing. Shao Kahn waits at the end of it. The film leans hard into ritual: every fight is a ceremony, every kill a tithe paid to something older than the fighters know.",
-    artist:"Yoshitaka Amano",
-    artistWiki:"https://en.wikipedia.org/wiki/Yoshitaka_Amano",
-    artStatement:"Amano draws warriors the way other people draw ghosts — elongated, weightless, half-dissolved into the paper, the only saturated mark on the page being a single drop of blood at the end of a long elegant blade. His Final Fantasy and Vampire Hunter D illustrations treat combat as ceremony: two figures standing very still in front of something much larger and much older than them. That's the whole movie. Scorpion's chain, Sub-Zero's ghost, Shao Kahn's helm hovering like a second sun. The tournament is a temple, and Amano knows how to draw the silence right before the first strike.",
+    quote:"\"It was decided before either of them arrived.\"",
+    note:"Earthrealm's champions are summoned to Outworld for the tournament that decides whether their world keeps existing. Shao Kahn waits at the end of it. Underneath the spectacle is a quieter horror: two strangers, made to walk toward each other across a stone floor, in front of something older than both of them. The fight is the ceremony. The blood is the offering.",
+    artist:"Odilon Redon × Sesshu Toyo",
+    artistWiki:"https://en.wikipedia.org/wiki/Odilon_Redon",
+    artStatement:"Redon spent decades on his Noirs — black charcoal and ink studies of single suspended things: an eye, a head, a flower, a sun — staging dread as something beautiful and almost holy. Sesshu painted entire landscapes in four brushstrokes and a held breath. Mortal Kombat II is a film about ritual cruelty in front of a watching god; the honest poster for it is not a fight scene, it's the moment before. A red wound of a sun. Two figures standing too far apart to save each other. A single drop of blood already on the floor. Everything else is paper.",
     meta:{Director:"Simon McQuoid", Year:"2025", Watched:"June 2026", Tags:"Tournament · Ritual · Outworld"}
   }
 ].reverse();
