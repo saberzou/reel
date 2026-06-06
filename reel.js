@@ -138,9 +138,9 @@ const films = [
     img:"posters/mortal-kombat-2.jpg",
     quote:"\"It was decided before either of them arrived.\"",
     note:"Earthrealm's champions are summoned to Outworld for the tournament that decides whether their world keeps existing. Shao Kahn waits at the end of it. Underneath the spectacle is a quieter horror: two strangers, made to walk toward each other across a stone floor, in front of something older than both of them. The fight is the ceremony. The blood is the offering.",
-    artist:"Odilon Redon × Sesshu Toyo",
-    artistWiki:"https://en.wikipedia.org/wiki/Odilon_Redon",
-    artStatement:"Redon spent decades on his Noirs — black charcoal and ink studies of single suspended things: an eye, a head, a flower, a sun — staging dread as something beautiful and almost holy. Sesshu painted entire landscapes in four brushstrokes and a held breath. Mortal Kombat II is a film about ritual cruelty in front of a watching god; the honest poster for it is not a fight scene, it's the moment before. A red wound of a sun. Two figures standing too far apart to save each other. A single drop of blood already on the floor. Everything else is paper.",
+    artist:"",
+    artistWiki:"",
+    artStatement:"The most violent moment in any fight isn't the strike. It's the second before — when both fighters are perfectly still and the floor between them is the loudest thing in the room. Shot from above, the way a god would watch. Two figures on the diameter of a stone circle, dragon glyphs eroded around the ring, shadows reaching for each other and not quite touching. A single drop of blood already dried at the center. The fight has been waiting there for centuries; the fighters just showed up.",
     meta:{Director:"Simon McQuoid", Year:"2025", Watched:"June 2026", Tags:"Tournament · Ritual · Outworld"}
   }
 ].reverse();
@@ -563,11 +563,14 @@ function openDetail(i){
   document.getElementById("dQuote").textContent = f.quote;
   document.getElementById("dNote").textContent = f.note;
   const artBlock = document.getElementById("dArt");
-  if(f.artist && f.artStatement){
+  if(f.artStatement){
     artBlock.style.display = "";
+    const link = (f.artist && f.artistWiki)
+      ? `<a class="art-link" href="${f.artistWiki}" target="_blank" rel="noopener">In the style of ${f.artist} →</a>`
+      : "";
     artBlock.innerHTML = `<div class="art-label">Artistic direction</div>
       <p class="art-body">${f.artStatement}</p>
-      <a class="art-link" href="${f.artistWiki}" target="_blank" rel="noopener">In the style of ${f.artist} →</a>`;
+      ${link}`;
   } else {
     artBlock.style.display = "none";
   }
