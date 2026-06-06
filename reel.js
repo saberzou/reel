@@ -151,9 +151,9 @@ const films = [
     img:"posters/good-luck-have-fun-dont-die.jpg",
     quote:"\"This is attempt one hundred and eighteen.\"",
     note:"A man from the future (Sam Rockwell) keeps running the same day over and over to stop the end of humanity — one hundred and eighteen times so far, give or take. Verbinski's return after nine years is a goofy time-loop comedy that quietly becomes something sadder: a love letter to keeping going, to showing up again on day 119, knowing you'll probably get hurt and definitely get bored. The world has been ending the whole time. Nobody told the rest of us.",
-    artist:"Christoph Niemann",
-    artistWiki:"https://en.wikipedia.org/wiki/Christoph_Niemann",
-    artStatement:"Niemann's New Yorker covers and Sunday Sketching work do the impossible — they reduce huge ideas to a single pictogram with humour and emotional weight intact. He treats complexity as a problem of geometry: find the one shape that holds the whole feeling and let everything else fall away. Good Luck, Have Fun, Don't Die is, underneath the gags, a film about repetition as devotion — the loop as a love letter. A hand-drawn clock, twelve coral silhouettes of the same man standing at each hour in a slightly different mood, the hand bent from going around too many times, and a small arrow at the bottom curving back into the circle. The whole movie as one elegant joke that lands sideways and stays with you.",
+    artist:"Lorenzo Mattotti",
+    artistWiki:"https://en.wikipedia.org/wiki/Lorenzo_Mattotti",
+    artStatement:"Mattotti paints with pastel and oil sticks in bold flat blocks of saturated color — no linework, no outlines, just where one color meets another. His New Yorker covers and the animated film La Famosa Invasione degli Orsi in Sicilia render mythic loneliness as landscape. Good Luck, Have Fun, Don't Die is, underneath the gags, a film about devotion across endless repetition — a man at attempt 117 who knows tomorrow doesn't exist and gets up anyway. The honest poster isn't the clock. It's the long plain at dusk, one small figure facing the horizon, thirty ghostly versions of himself trailing into the haze behind him. Last light catching one shoulder. The mathematics of loneliness, made warm.",
     meta:{Director:"Gore Verbinski", Year:"2025", Watched:"June 2026", Tags:"Time loop · Repetition · Devotion"}
   }
 ].reverse();
