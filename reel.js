@@ -142,6 +142,19 @@ const films = [
     artistWiki:"https://www.criterion.com/current/posts/6339-how-sam-smith-finds-inspiration-in-the-history-of-poster-art",
     artStatement:"Sam Smith has spent the last decade making Criterion Collection covers — House, Modern Times, Japón — by reducing entire films to a single uncompromising graphic shape and three confident colors. He treats movie posters as gallery prints, not marketing. Mortal Kombat II deserves the Criterion treatment, even if it'll never get one: one giant oxblood disc that's a sun, a wound, and a target at once; one black silhouette mid-flying-kick frozen inside it; two heraldic dragon emblems watching from the corners; a thin mustard horizon and a single drop of blood that's already fallen. Reductive, modern, museum-quality. The fight collapsed into one shape you'd hang on a wall.",
     meta:{Director:"Simon McQuoid", Year:"2025", Watched:"June 2026", Tags:"Tournament · Ritual · Outworld"}
+  },
+  {
+    key:"good-luck-have-fun-dont-die", no:"12",
+    title:"good luck, have fun, don't die",
+    type:"Sci-fi comedy · 2025",
+    byline:"A film by Gore Verbinski · written by Matthew Robinson",
+    img:"posters/good-luck-have-fun-dont-die.jpg",
+    quote:"\"This is attempt one hundred and eighteen.\"",
+    note:"A man from the future (Sam Rockwell) keeps running the same day over and over to stop the end of humanity — one hundred and eighteen times so far, give or take. Verbinski's return after nine years is a goofy time-loop comedy that quietly becomes something sadder: a love letter to keeping going, to showing up again on day 119, knowing you'll probably get hurt and definitely get bored. The world has been ending the whole time. Nobody told the rest of us.",
+    artist:"Christoph Niemann",
+    artistWiki:"https://en.wikipedia.org/wiki/Christoph_Niemann",
+    artStatement:"Niemann's New Yorker covers and Sunday Sketching work do the impossible — they reduce huge ideas to a single pictogram with humour and emotional weight intact. He treats complexity as a problem of geometry: find the one shape that holds the whole feeling and let everything else fall away. Good Luck, Have Fun, Don't Die is, underneath the gags, a film about repetition as devotion — the loop as a love letter. A hand-drawn clock, twelve coral silhouettes of the same man standing at each hour in a slightly different mood, the hand bent from going around too many times, and a small arrow at the bottom curving back into the circle. The whole movie as one elegant joke that lands sideways and stays with you.",
+    meta:{Director:"Gore Verbinski", Year:"2025", Watched:"June 2026", Tags:"Time loop · Repetition · Devotion"}
   }
 ].reverse();
 
