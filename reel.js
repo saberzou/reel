@@ -138,9 +138,9 @@ const films = [
     img:"posters/mortal-kombat-2.jpg",
     quote:"\"It was decided before either of them arrived.\"",
     note:"Earthrealm's champions are summoned to Outworld for the tournament that decides whether their world keeps existing. Shao Kahn waits at the end of it. Underneath the spectacle is a quieter horror: two strangers, made to walk toward each other across a stone floor, in front of something older than both of them. The fight is the ceremony. The blood is the offering.",
-    artist:"Wassily Kandinsky",
-    artistWiki:"https://en.wikipedia.org/wiki/Wassily_Kandinsky",
-    artStatement:"Kandinsky spent his life trying to paint the apocalypse as music — his Composition series treats cosmic war as colored discs colliding, geometric rays radiating outward, the end of the world rendered with the calm of a diagram. Mortal Kombat II is, underneath the choreography, a film about two universes about to crash into each other and a small handful of mortals standing in the gap. The honest poster isn't the fight. It's the cosmology. Earthrealm and Outworld eclipsing. The tournament living in the gold almond of their overlap. Tally marks counting the dead. Five thrones across the top. A single thread of blood dropping down to one droplet — what the gods are collecting. A diagram of awe.",
+    artist:"Sam Smith",
+    artistWiki:"https://www.criterion.com/current/posts/6339-how-sam-smith-finds-inspiration-in-the-history-of-poster-art",
+    artStatement:"Sam Smith has spent the last decade making Criterion Collection covers — House, Modern Times, Japón — by reducing entire films to a single uncompromising graphic shape and three confident colors. He treats movie posters as gallery prints, not marketing. Mortal Kombat II deserves the Criterion treatment, even if it'll never get one: one giant oxblood disc that's a sun, a wound, and a target at once; one black silhouette mid-flying-kick frozen inside it; two heraldic dragon emblems watching from the corners; a thin mustard horizon and a single drop of blood that's already fallen. Reductive, modern, museum-quality. The fight collapsed into one shape you'd hang on a wall.",
     meta:{Director:"Simon McQuoid", Year:"2025", Watched:"June 2026", Tags:"Tournament · Ritual · Outworld"}
   }
 ].reverse();
