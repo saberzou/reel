@@ -150,11 +150,11 @@ const films = [
     byline:"A film by Gore Verbinski · written by Matthew Robinson",
     img:"posters/good-luck-have-fun-dont-die.jpg",
     quote:"\"This is attempt one hundred and eighteen.\"",
-    note:"A man from the future (Sam Rockwell) keeps running the same day over and over to stop the end of humanity — one hundred and eighteen times so far, give or take. Verbinski's return after nine years is a goofy time-loop comedy that quietly becomes something sadder: a love letter to keeping going, to showing up again on day 119, knowing you'll probably get hurt and definitely get bored. The world has been ending the whole time. Nobody told the rest of us.",
-    artist:"Lorenzo Mattotti",
-    artistWiki:"https://en.wikipedia.org/wiki/Lorenzo_Mattotti",
-    artStatement:"Mattotti paints with pastel and oil sticks in bold flat blocks of saturated color — no linework, no outlines, just where one color meets another. His New Yorker covers and the animated film La Famosa Invasione degli Orsi in Sicilia render mythic loneliness as landscape. Good Luck, Have Fun, Don't Die is, underneath the gags, a film about devotion across endless repetition — a man at attempt 117 who knows tomorrow doesn't exist and gets up anyway. The honest poster isn't the clock. It's the long plain at dusk, one small figure facing the horizon, thirty ghostly versions of himself trailing into the haze behind him. Last light catching one shoulder. The mathematics of loneliness, made warm.",
-    meta:{Director:"Gore Verbinski", Year:"2025", Watched:"June 2026", Tags:"Time loop · Repetition · Devotion"}
+    note:"A man from the future (Sam Rockwell) returns to the present to stop humanity's slow surrender to the rectangle in its pocket. Verbinski's comeback after nine years is dressed up as a goofy time-loop adventure, but underneath it is a sharp, sad rant against phones and AI — against the version of us that already won. He runs the same day a hundred and eighteen times because the catastrophe isn't in the future. It's already happening, at dinner, with the plates getting cold.",
+    artist:"Pawel Kuczynski",
+    artistWiki:"https://en.wikipedia.org/wiki/Pawel_Kuczynski",
+    artStatement:"Kuczynski is a working Polish painter who turns the canvas into a quiet political weapon — one painterly image, one merciless thesis, no caption needed. He paints in oil with traditional realist craft and uses that finish to land critiques the way a punchline lands a joke: gently, then permanently. Good Luck, Have Fun, Don't Die is, underneath the time-loop gags, Gore Verbinski’s rant against the phone in your hand and the AI in your feed — against the version of us that already lost. The honest poster is a Last Supper repainted for the year of our algorithm: six faces lit ghost-blue from below, eyes lost in the screens, plates forgotten on a deep burgundy cloth, the only warmth a soft gold falling on the one man at the head of the table who has no phone and is looking up. He is the man from the future. The future is already at dinner.",
+    meta:{Director:"Gore Verbinski", Year:"2025", Watched:"June 2026", Tags:"AI · Phones · The Future Already Here"}
   }
 ].reverse();
 
