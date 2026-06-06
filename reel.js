@@ -138,9 +138,9 @@ const films = [
     img:"posters/mortal-kombat-2.jpg",
     quote:"\"The tournament was never a game.\"",
     note:"Earthrealm's champions are summoned to Outworld for the tournament that decides whether their world keeps existing. Shao Kahn waits at the end of it. The film leans hard into ritual: every fight is a ceremony, every kill a tithe paid to something older than the fighters know.",
-    artist:"Tsukioka Yoshitoshi",
-    artistWiki:"https://en.wikipedia.org/wiki/Tsukioka_Yoshitoshi",
-    artStatement:"Yoshitoshi was the last great master of ukiyo-e, working in a Japan that was already letting go of him — his late prints turn warriors and ghosts into figures of theatre, violence rendered with the stillness of a held breath. Mortal Kombat is, underneath all the fatalities, a tournament against gods and demons; it deserves a poster that treats it the way Yoshitoshi treated his swordsmen and oni — as ritual, not spectacle. One brushstroke of blood across a paper that has been folded and unfolded for a century.",
+    artist:"Yoshitaka Amano",
+    artistWiki:"https://en.wikipedia.org/wiki/Yoshitaka_Amano",
+    artStatement:"Amano draws warriors the way other people draw ghosts — elongated, weightless, half-dissolved into the paper, the only saturated mark on the page being a single drop of blood at the end of a long elegant blade. His Final Fantasy and Vampire Hunter D illustrations treat combat as ceremony: two figures standing very still in front of something much larger and much older than them. That's the whole movie. Scorpion's chain, Sub-Zero's ghost, Shao Kahn's helm hovering like a second sun. The tournament is a temple, and Amano knows how to draw the silence right before the first strike.",
     meta:{Director:"Simon McQuoid", Year:"2025", Watched:"June 2026", Tags:"Tournament · Ritual · Outworld"}
   }
 ].reverse();
