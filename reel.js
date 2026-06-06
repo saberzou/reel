@@ -138,9 +138,9 @@ const films = [
     img:"posters/mortal-kombat-2.jpg",
     quote:"\"It was decided before either of them arrived.\"",
     note:"Earthrealm's champions are summoned to Outworld for the tournament that decides whether their world keeps existing. Shao Kahn waits at the end of it. Underneath the spectacle is a quieter horror: two strangers, made to walk toward each other across a stone floor, in front of something older than both of them. The fight is the ceremony. The blood is the offering.",
-    artist:"",
-    artistWiki:"",
-    artStatement:"The most violent moment in any fight isn't the strike. It's the second before — when both fighters are perfectly still and the floor between them is the loudest thing in the room. Shot from above, the way a god would watch. Two figures on the diameter of a stone circle, dragon glyphs eroded around the ring, shadows reaching for each other and not quite touching. A single drop of blood already dried at the center. The fight has been waiting there for centuries; the fighters just showed up.",
+    artist:"Yuko Shimizu",
+    artistWiki:"https://en.wikipedia.org/wiki/Yuko_Shimizu_(illustrator)",
+    artStatement:"Yuko Shimizu is a Japanese-born, New York-based illustrator who has spent twenty years making editorial covers with a real sumi brush on cold-press watercolor paper — ukiyo-e grammar dragged into the present, sword fights and dragons and ghosts staged like New Yorker covers. Mortal Kombat is, at its honest center, exactly that hybrid: a Hong Kong tournament film told with American blockbuster muscle. The poster should look made by hand on paper, with one confident black brushstroke for the kick, a flat crimson dragon coiling through the negative space, jade arena steps, and a single red seal punched into the corner like a chop-mark. Kinetic but composed. Dangerous but elegant.",
     meta:{Director:"Simon McQuoid", Year:"2025", Watched:"June 2026", Tags:"Tournament · Ritual · Outworld"}
   }
 ].reverse();
