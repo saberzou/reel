@@ -138,9 +138,9 @@ const films = [
     img:"posters/mortal-kombat-2.jpg",
     quote:"\"It was decided before either of them arrived.\"",
     note:"Earthrealm's champions are summoned to Outworld for the tournament that decides whether their world keeps existing. Shao Kahn waits at the end of it. Underneath the spectacle is a quieter horror: two strangers, made to walk toward each other across a stone floor, in front of something older than both of them. The fight is the ceremony. The blood is the offering.",
-    artist:"Sam Smith",
-    artistWiki:"https://www.criterion.com/current/posts/6339-how-sam-smith-finds-inspiration-in-the-history-of-poster-art",
-    artStatement:"Sam Smith has spent the last decade making Criterion Collection covers — House, Modern Times, Japón — by reducing entire films to a single uncompromising graphic shape and three confident colors. He treats movie posters as gallery prints, not marketing. Mortal Kombat II deserves the Criterion treatment, even if it'll never get one: one giant oxblood disc that's a sun, a wound, and a target at once; one black silhouette mid-flying-kick frozen inside it; two heraldic dragon emblems watching from the corners; a thin mustard horizon and a single drop of blood that's already fallen. Reductive, modern, museum-quality. The fight collapsed into one shape you'd hang on a wall.",
+    artist:"Tomer Hanuka",
+    artistWiki:"https://en.wikipedia.org/wiki/Tomer_Hanuka",
+    artStatement:"Tomer Hanuka is the Israeli illustrator behind a generation of cinematic painted movie posters — book covers, New Yorker spreads, Tarantino-and-Kubrick reimaginings. He works in the ‘moment before’: a single suspended frame, painted with comic-book polish and gallery-grade light. Confident black ink linework, expressive painted color, dramatic lit-from-within figures. Mortal Kombat II deserved a Hanuka poster, not another photoreal key-art — a real painted theatrical poster of a lone fighter mid-flying kick suspended inside the coiled body of a massive dragon, fire pouring down past him like lava, the title set huge in molten gold across the top. Cinematic, mythic, painted, designed. A real movie poster you'd actually want on a wall.",
     meta:{Director:"Simon McQuoid", Year:"2025", Watched:"June 2026", Tags:"Tournament · Ritual · Outworld"}
   },
   {
@@ -151,9 +151,9 @@ const films = [
     img:"posters/good-luck-have-fun-dont-die.jpg",
     quote:"\"This is attempt one hundred and eighteen.\"",
     note:"A man from the future (Sam Rockwell) returns to the present to stop humanity's slow surrender to the rectangle in its pocket. Verbinski's comeback after nine years is dressed up as a goofy time-loop adventure, but underneath it is a sharp, sad rant against phones and AI — against the version of us that already won. He runs the same day a hundred and eighteen times because the catastrophe isn't in the future. It's already happening, at dinner, with the plates getting cold.",
-    artist:"Jean Jullien",
-    artistWiki:"https://en.wikipedia.org/wiki/Jean_Jullien",
-    artStatement:"Jean Jullien is a French illustrator whose Modern Life series and New Yorker covers turned the visual joke about phones into an editorial language of its own — thick brush-pen outlines, flat blocks of color, naive shapes, and a punchline that lands sad. Good Luck, Have Fun, Don't Die is dressed up as a goofy time-loop adventure, but underneath it is Gore Verbinski’s rant against the rectangle in your pocket and the AI in your feed — against the version of us that already lost. The honest poster is the Jullien cover that movie deserved: a top-down dinner table, six people with phone-screens where their faces should be, hands holding the actual phones, plates of food forgotten between them. At the head of the table, one man with an actual round face looks up out of the page. He has no phone. He is the man from the future. The future is already at dinner.",
+    artist:"Akiko Stehrenberger",
+    artistWiki:"https://www.akikomatic.com/",
+    artStatement:"Akiko Stehrenberger — AKIKOMATIC — is the contemporary American movie-poster illustrator behind a generation of indie theatrical posters (I’m Thinking of Ending Things, Funny Games, Honey Boy, Helvetica). She paints expressive, slightly unsettling, slightly tender portraits that are designed first as real movie posters and second as gallery-quality illustration. The honest poster for Good Luck, Have Fun, Don’t Die is the one she would have made: a painted close-up of Sam Rockwell’s face, split vertically — one half warm flesh and a tired hazel eye, awake and human; the other half dissolving into a cascade of glowing electric-blue app-icon pixels scattering off into the cream void, the eye on that side a small blank screen-rectangle. Half the man becoming the phone. Calm, tender, sad, designed. The exact face of the species the man from the future came back to save.",
     meta:{Director:"Gore Verbinski", Year:"2025", Watched:"June 2026", Tags:"AI · Phones · The Future Already Here"}
   }
 ].reverse();
