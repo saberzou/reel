@@ -138,9 +138,9 @@ const films = [
     img:"posters/mortal-kombat-2.jpg",
     quote:"\"It was decided before either of them arrived.\"",
     note:"Earthrealm's champions are summoned to Outworld for the tournament that decides whether their world keeps existing. Shao Kahn waits at the end of it. Underneath the spectacle is a quieter horror: two strangers, made to walk toward each other across a stone floor, in front of something older than both of them. The fight is the ceremony. The blood is the offering.",
-    artist:"Yuko Shimizu",
-    artistWiki:"https://en.wikipedia.org/wiki/Yuko_Shimizu_(illustrator)",
-    artStatement:"Yuko Shimizu is a Japanese-born, New York-based illustrator who has spent twenty years making editorial covers with a real sumi brush on cold-press watercolor paper — ukiyo-e grammar dragged into the present, sword fights and dragons and ghosts staged like New Yorker covers. Mortal Kombat is, at its honest center, exactly that hybrid: a Hong Kong tournament film told with American blockbuster muscle. The poster should look made by hand on paper, with one confident black brushstroke for the kick, a flat crimson dragon coiling through the negative space, jade arena steps, and a single red seal punched into the corner like a chop-mark. Kinetic but composed. Dangerous but elegant.",
+    artist:"",
+    artistWiki:"",
+    artStatement:"Mortal Kombat was always two things at once: a 1990s American arcade game and a 1970s Hong Kong kung-fu film, dressed up as a tournament. The honest visual lineage isn't fan art or concept paintings — it's the hand-painted gouache posters that hung outside Shaw Brothers cinemas in Kowloon, where every hero stood centered in fighting stance under a flaming halo, framed like a temple deity. So that's what this is. The hooded warrior in guard. A jade sun-disc ringed in cinnabar flame, a coiled dragon inside it like a mandala. Two ceremonial weapons floating at his hips as offerings. A single drop of blood already on the gold platform at his feet. Kung-fu cinema as religious art.",
     meta:{Director:"Simon McQuoid", Year:"2025", Watched:"June 2026", Tags:"Tournament · Ritual · Outworld"}
   }
 ].reverse();
